@@ -21,8 +21,8 @@ const StaffTopNav = () => {
   const seenMessagesRef = useRef(new Set());
 
   useEffect(() => {
-    const notificationSocket = new WebSocket("wss://bussinesstoolcrm.up.railway.app/ws/notifications/");
-    const leadNotificationSocket = new WebSocket("wss://bussinesstoolcrm.up.railway.app/ws/lead-notifications/");
+    const notificationSocket = new WebSocket("wss://crmbackend.up.railway.app/ws/notifications/");
+    const leadNotificationSocket = new WebSocket("wss://crmbackend.up.railway.app/ws/lead-notifications/");
 
     const addNotification = (message) => {
       const msgStr = typeof message === "string" ? message : JSON.stringify(message);

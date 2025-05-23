@@ -138,8 +138,8 @@ const AdminDashboard = () => {
   };
 
   const setupWebSocket = () => {
-    const notificationSocket = new WebSocket("wss://bussinesstoolcrm.up.railway.app/ws/notifications/");
-    const leadNotificationSocket = new WebSocket("wss://bussinesstoolcrm.up.railway.app/ws/lead-notifications/");
+    const notificationSocket = new WebSocket("wss://crmbackend.up.railway.app/ws/notifications/");
+    const leadNotificationSocket = new WebSocket("wss://crmbackend.up.railway.app/ws/lead-notifications/");
 
     notificationSocket.onmessage = (event) => {
       try {
