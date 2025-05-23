@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom"; // ✅ Import useLo
 import axios from "axios";
 import styles from "./SalesMNewLeads.module.css";
 import StaffLayout from "../../components/Layouts/SalesMLayout"; // Correct Layout Import
-import { NotebookPen } from "lucide-react";
+import { NotebookPen,CheckCircle2 } from "lucide-react";
 import FancySpinner from "../../components/Loader/Loader";
 
 const LeadsList = () => {
