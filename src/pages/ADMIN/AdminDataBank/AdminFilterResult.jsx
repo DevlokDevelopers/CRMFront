@@ -66,8 +66,7 @@ const AdminFilteredResults = () => {
             {data.map((item) => (
               <div key={item.id} className={styles.resultCard}>
                 <h3>{item.name}</h3>
-                <p><strong>Follower:</strong> {item.follower_name}</p>
-              <p><strong>Email:</strong> {item.email}</p>
+                <p><strong>Follower:</strong> {item.followers}</p>
               <p><strong>Phone: </strong>{item.phonenumber}</p>
               <p><strong>District:</strong> {item.district}</p>
               <p><strong>Place:</strong> {item.place}</p>
