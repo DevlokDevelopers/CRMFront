@@ -50,7 +50,6 @@ const AdminMatchingDatas = () => {
             {matches.map((match) => (
               <div key={match.data.id} className={styles.card}>
                 <h2>{match.data.name}</h2>
-                <p><strong>Email: {match.data.email}</strong></p>
               <p><strong>Phone: {match.data.phonenumber}</strong></p>
               <p><strong>District: {match.data.district}</strong></p>
               <p><strong>Place: {match.data.place}</strong></p>
