@@ -311,8 +311,19 @@ const LeadsList = () => {
           disabled={isFollowingAll}
           title="Follow All"
         >
-          {isFollowingAll ? "..." : <CheckCircle2 size={32} />}
+          {isFollowingAll ? (
+            <>
+              <span className={styles.simpleSpinner} />
+              <span>Following...</span>
+            </>
+          ) : (
+            <>
+              <CheckCircle2 className={styles.fabIcon} />
+              <span>Follow All</span>
+            </>
+          )}
         </button>
+
       </div>
 
       {/* ✅ Modal for Displaying Message */}
