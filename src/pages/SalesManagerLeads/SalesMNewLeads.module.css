@@ -368,7 +368,14 @@
 /* ✅ Mobile & Small Screens */
 @media (max-width: 768px) {
   /* Single Column for Small Screens */
-  
+  .fab {
+    position: static;
+    margin: 16px auto;
+    display: block;
+    width: calc(100% - 40px); /* keep some horizontal padding */
+    max-width: 300px;
+    text-align: center;
+  }
   .leadContainer {
     display: grid;
     grid-template-columns: 1fr; /* 📱 Single column */
