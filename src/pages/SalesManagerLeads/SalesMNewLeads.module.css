@@ -325,6 +325,34 @@
   cursor: not-allowed;
   transform: none;
 }
+.paginationContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 0 1rem;
+}
+
+.paginationBtn {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.paginationBtn:hover {
+  background-color: #ddd;
+}
+
+.activePage {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
 
 
 /* Responsive Design */
