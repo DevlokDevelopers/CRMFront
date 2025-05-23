@@ -16,6 +16,7 @@ const LeadsList = () => {
   const navigate = useNavigate(); // ✅ Initialize navigate hook
   const location = useLocation(); // ✅ Get current route info
   const [loading, setLoading] = useState(true);
+  const [isFollowingAll, setIsFollowingAll] = useState(false);
 
   // ✅ Define Tab Paths for Navigation
   const tabPaths = {
@@ -204,13 +205,15 @@ const LeadsList = () => {
           <>
           {/* ✅ Follow All Leads Button */}
             {leads.length > 0 && (
-              <div style={{ marginBottom: "20px", textAlign: "right" }}>
+              <div className={styles.topActions}>
                 <button
-                  className={styles.followUpBtn}
+                  className={styles.followAllBtn}
                   onClick={async () => {
                     const confirm = window.confirm("Follow ALL new leads?");
                     if (!confirm) return;
+
                     const token = localStorage.getItem("access_token");
+                    setIsFollowingAll(true); // ⏳ Show loading
                     try {
                       const response = await axios.post(
                         "https://crmbackend.up.railway.app/databank/follow_multiple_leads/",
@@ -222,17 +225,21 @@ const LeadsList = () => {
                         }
                       );
                       alert("Followed successfully: " + response.data.followed_leads.length + " leads");
-                      fetchLeads(); // 🔄 Refresh list
+                      fetchLeads(); // Refresh list
                     } catch (error) {
                       console.error("Failed to follow all leads:", error);
                       alert("Failed to follow all leads. Try again.");
+                    } finally {
+                      setIsFollowingAll(false); // ✅ Hide loading
                     }
                   }}
+                  disabled={isFollowingAll}
                 >
-                  📌 Follow Entire New Leads
+                  {isFollowingAll ? "Following..." : "Follow All"}
                 </button>
               </div>
             )}
+
 
             {/* ✅ Leads with Pagination */}
             <div className={styles.leadContainer}>

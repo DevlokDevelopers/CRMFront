@@ -276,6 +276,28 @@
     100% { transform: rotate(360deg); }
   }
 
+
+
+  .followAllBtn {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.followAllBtn:hover {
+  background-color: #1d4ed8;
+}
+
+.followAllBtn:disabled {
+  background-color: #93c5fd; /* Tailwind blue-300 */
+  cursor: not-allowed;
+}
+
 /* Responsive Design */
 /* ✅ Responsive Design - Updated */
 /* ✅ Corrected Responsive Code */
