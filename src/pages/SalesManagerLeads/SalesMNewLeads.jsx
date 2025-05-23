@@ -164,6 +164,26 @@ const LeadsList = () => {
       setError("Failed to take lead. Please try again.");
     }
   };
+
+  const handleFollowAll = async () => {
+    if (!window.confirm("Follow ALL new leads?")) return;
+    const token = localStorage.getItem("access_token");
+    setIsFollowingAll(true);
+    try {
+      const res = await axios.post("https://crmbackend.up.railway.app/databank/follow_multiple_leads/", {
+        lead_ids: leads.map(lead => lead.id),
+      }, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      alert(`Followed ${res.data.followed_leads.length} leads successfully.`);
+      fetchLeads();
+    } catch (err) {
+      console.error(err);
+      alert("Failed to follow all leads.");
+    } finally {
+      setIsFollowingAll(false);
+    }
+  };
   
 
   return (
@@ -203,44 +223,7 @@ const LeadsList = () => {
             <p className={styles.noData}>No leads available.</p>
           ) : (
           <>
-          {/* ✅ Follow All Leads Button */}
-            {leads.length > 0 && (
-              <div className={styles.topActions}>
-                <button
-                  className={styles.followAllBtn}
-                  onClick={async () => {
-                    const confirm = window.confirm("Follow ALL new leads?");
-                    if (!confirm) return;
-
-                    const token = localStorage.getItem("access_token");
-                    setIsFollowingAll(true); // ⏳ Show loading
-                    try {
-                      const response = await axios.post(
-                        "https://crmbackend.up.railway.app/databank/follow_multiple_leads/",
-                        { lead_ids: leads.map(lead => lead.id) },
-                        {
-                          headers: {
-                            Authorization: `Bearer ${token}`,
-                          },
-                        }
-                      );
-                      alert("Followed successfully: " + response.data.followed_leads.length + " leads");
-                      fetchLeads(); // Refresh list
-                    } catch (error) {
-                      console.error("Failed to follow all leads:", error);
-                      alert("Failed to follow all leads. Try again.");
-                    } finally {
-                      setIsFollowingAll(false); // ✅ Hide loading
-                    }
-                  }}
-                  disabled={isFollowingAll}
-                >
-                  {isFollowingAll ? "Following..." : "Follow All"}
-                </button>
-              </div>
-            )}
-
-
+          
             {/* ✅ Leads with Pagination */}
             <div className={styles.leadContainer}>
               {currentLeads.map((lead) => (
@@ -322,6 +305,14 @@ const LeadsList = () => {
             )}
           </>
         )}
+        <button
+          className={styles.fab}
+          onClick={handleFollowAll}
+          disabled={isFollowingAll}
+          title="Follow All"
+        >
+          {isFollowingAll ? "..." : <CheckCircle2 size={32} />}
+        </button>
       </div>
 
       {/* ✅ Modal for Displaying Message */}
