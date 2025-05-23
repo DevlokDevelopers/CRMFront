@@ -202,6 +202,38 @@ const LeadsList = () => {
             <p className={styles.noData}>No leads available.</p>
           ) : (
           <>
+          {/* ✅ Follow All Leads Button */}
+            {leads.length > 0 && (
+              <div style={{ marginBottom: "20px", textAlign: "right" }}>
+                <button
+                  className={styles.followUpBtn}
+                  onClick={async () => {
+                    const confirm = window.confirm("Follow ALL new leads?");
+                    if (!confirm) return;
+                    const token = localStorage.getItem("access_token");
+                    try {
+                      const response = await axios.post(
+                        "https://crmbackend.up.railway.app/databank/follow_multiple_leads/",
+                        { lead_ids: leads.map(lead => lead.id) },
+                        {
+                          headers: {
+                            Authorization: `Bearer ${token}`,
+                          },
+                        }
+                      );
+                      alert("Followed successfully: " + response.data.followed_leads.length + " leads");
+                      fetchLeads(); // 🔄 Refresh list
+                    } catch (error) {
+                      console.error("Failed to follow all leads:", error);
+                      alert("Failed to follow all leads. Try again.");
+                    }
+                  }}
+                >
+                  📌 Follow Entire New Leads
+                </button>
+              </div>
+            )}
+
             {/* ✅ Leads with Pagination */}
             <div className={styles.leadContainer}>
               {currentLeads.map((lead) => (
