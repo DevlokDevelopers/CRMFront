@@ -62,8 +62,12 @@ const FilteredResults = () => {
             {data.map((item) => (
             <div key={item.id} className={styles.resultCard}>
               <h3>{item.name}</h3>
-              <p>
-                  <strong>Follower:{item.followers}</strong></p>
+              {item.followers && item.followers.length > 0 && (
+                <p>
+                  <strong>Follower:</strong> {item.followers[0].follower.username}
+                </p>
+              )}
+
               {/* Followers if available */}
               
 
