@@ -166,28 +166,27 @@
   
   /* ✅ Pagination Container */
   .paginationContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    gap: 6px;
-  }
-  
-  /* ✅ Pagination Button */
-  .paginationBtn {
-    background-color: #e5e7eb;
-    color: #333;
-    border: 1px solid #d1d5db;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .paginationBtn:hover {
-    background-color: #2563eb;
-    color: white;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 0 1rem;
+}
+
+.paginationBtn {
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.paginationBtn:hover {
+  background-color: #ddd;
+}
   /* ✅ Active Page Button */
   .activePage {
     background-color: #2563eb;
