@@ -45,7 +45,7 @@ const AdminLeadCategoryGraph = () => {
     "General Lead",
     "Marketing data",
     "Social Media",
-    "Main data",
+    "Main Data",
   ];
 
   useEffect(() => {
