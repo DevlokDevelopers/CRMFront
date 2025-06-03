@@ -43,7 +43,7 @@ const AdminLeadCategoryGraph = () => {
 
   const predefinedCategories = [
     "General Lead",
-    "Marketing data",
+    "Marketing Data",
     "Social Media",
     "Main Data",
   ];
