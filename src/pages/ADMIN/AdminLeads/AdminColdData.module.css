@@ -5,19 +5,19 @@
 }
 
 .cold-title {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-  text-align: center;
   color: #2c3e50;
+  text-align: center;
 }
 
 .cold-error {
   color: #e74c3c;
-  background-color: #fdecea;
-  padding: 0.8rem;
-  border-radius: 6px;
   margin-bottom: 1rem;
+  background-color: #fdecea;
+  padding: 0.5rem;
+  border-radius: 6px;
   text-align: center;
 }
 
@@ -25,50 +25,46 @@
   font-size: 1.2rem;
   color: #2980b9;
   text-align: center;
-  margin-top: 1rem;
 }
 
 .cold-table-wrapper {
   overflow-x: auto;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
 }
 
 .cold-data-table {
   width: 100%;
   border-collapse: collapse;
   min-width: 700px;
+  table-layout: auto;
 }
 
 .cold-data-table th,
 .cold-data-table td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .cold-data-table th {
-  background-color: #f0f4f8;
-  color: #2d3436;
+  background-color: #f7f9fc;
+  color: #34495e;
   font-weight: 600;
 }
 
-.cold-data-table td {
-  color: #555;
-}
-
 .cold-data-table tr:hover {
-  background-color: #f8faff;
+  background-color: #f0f8ff;
 }
 
 .cold-delete-btn {
   background-color: #e74c3c;
   color: white;
   border: none;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.9rem;
-  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -88,35 +84,43 @@
   color: #7f8c8d;
 }
 
-/* Responsive Enhancements */
+/* Tablet */
 @media (max-width: 768px) {
+  .cold-title {
+    font-size: 1.5rem;
+  }
+
   .cold-container {
     padding: 1rem;
   }
 
+  .cold-data-table th,
+  .cold-data-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .cold-delete-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
   .cold-title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 
   .cold-data-table th,
   .cold-data-table td {
-    padding: 0.7rem;
-    font-size: 0.9rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
   }
 
   .cold-delete-btn {
-    padding: 0.3rem 0.6rem;
+    padding: 0.4rem 0.6rem;
     font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .cold-data-table {
-    font-size: 0.85rem;
-    min-width: unset;
-  }
-
-  .cold-title {
-    font-size: 1.4rem;
   }
 }

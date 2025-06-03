@@ -57,7 +57,7 @@ const AdminColdData = () => {
                   <th>Ser. No</th>
                   <th>Name & Phone</th>
                   <th>Property Listing</th>
-                  <th>Date</th>
+                  <th>Submitted At</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -74,7 +74,15 @@ const AdminColdData = () => {
                       <td>{index + 1}</td>
                       <td>{entry.name_phone}</td>
                       <td>{entry.property_listing}</td>
-                      <td>{entry.date || entry.created_at || "N/A"}</td>
+                      <td>
+                        {entry.submitted_at
+                          ? new Date(entry.submitted_at).toLocaleString("en-IN", {
+                              dateStyle: "medium",
+                              timeStyle: "short",
+                              timeZone: "Asia/Kolkata"
+                            })
+                          : "NA"}
+                      </td>
                       <td>
                         <button
                           className={styles["cold-delete-btn"]}
