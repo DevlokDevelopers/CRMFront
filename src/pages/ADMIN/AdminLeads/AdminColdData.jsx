@@ -57,13 +57,14 @@ const AdminColdData = () => {
                   <th>Ser. No</th>
                   <th>Name & Phone</th>
                   <th>Property Listing</th>
+                  <th>Date</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 {coldData.length === 0 ? (
                   <tr>
-                    <td colSpan="4" className={styles["cold-empty"]}>
+                    <td colSpan="5" className={styles["cold-empty"]}>
                       No data available.
                     </td>
                   </tr>
@@ -73,6 +74,7 @@ const AdminColdData = () => {
                       <td>{index + 1}</td>
                       <td>{entry.name_phone}</td>
                       <td>{entry.property_listing}</td>
+                      <td>{entry.date || entry.created_at || "N/A"}</td>
                       <td>
                         <button
                           className={styles["cold-delete-btn"]}
@@ -95,4 +97,3 @@ const AdminColdData = () => {
 };
 
 export default AdminColdData;
-

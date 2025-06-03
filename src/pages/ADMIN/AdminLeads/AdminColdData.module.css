@@ -5,61 +5,70 @@
 }
 
 .cold-title {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 1.5rem;
+  text-align: center;
   color: #2c3e50;
 }
 
 .cold-error {
   color: #e74c3c;
-  margin-bottom: 1rem;
   background-color: #fdecea;
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .cold-loading {
   font-size: 1.2rem;
   color: #2980b9;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .cold-table-wrapper {
   overflow-x: auto;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .cold-data-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px;
+  min-width: 700px;
 }
 
 .cold-data-table th,
 .cold-data-table td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid #e1e1e1;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .cold-data-table th {
-  background-color: #f7f9fc;
-  color: #34495e;
+  background-color: #f0f4f8;
+  color: #2d3436;
   font-weight: 600;
 }
 
+.cold-data-table td {
+  color: #555;
+}
+
 .cold-data-table tr:hover {
-  background-color: #f0f8ff;
+  background-color: #f8faff;
 }
 
 .cold-delete-btn {
   background-color: #e74c3c;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -79,20 +88,35 @@
   color: #7f8c8d;
 }
 
-/* Responsive */
+/* Responsive Enhancements */
 @media (max-width: 768px) {
-  .cold-title {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
   .cold-container {
     padding: 1rem;
   }
 
+  .cold-title {
+    font-size: 1.6rem;
+  }
+
   .cold-data-table th,
   .cold-data-table td {
-    padding: 0.75rem;
+    padding: 0.7rem;
     font-size: 0.9rem;
+  }
+
+  .cold-delete-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cold-data-table {
+    font-size: 0.85rem;
+    min-width: unset;
+  }
+
+  .cold-title {
+    font-size: 1.4rem;
   }
 }
