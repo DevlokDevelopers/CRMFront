@@ -68,6 +68,7 @@ import AdminProfile from './pages/ADMIN/AdminProfile/AdminProfile'
 import AdminLeadCategoryGraph from './pages/ADMIN/AdminLeads/adminleadcategory'
 import AdminDatabank from './pages/ADMIN/AdminDataBank/AdminDatabank'
 import SalesLeadCategoryGraph from './pages/SalesManagerLeads/Salesmanagerleadcate'
+import AdminColdData from './pages/ADMIN/AdminLeads/AdminColdData'
 
 function App() {
 
@@ -140,6 +141,7 @@ function App() {
         <Route path='/adminleadcategorygraph' element={<AdminLeadCategoryGraph/>} />
         <Route path='/admin_databank' element={<AdminDatabank/>}/>
         <Route path='/salesmanger_lead_category' element={<SalesLeadCategoryGraph/>} />
+        <Route path='/colddata' element={<AdminColdData/>} />
 
 
 
