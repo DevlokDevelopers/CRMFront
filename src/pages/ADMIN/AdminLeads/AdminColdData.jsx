@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AdminLayout from "../../../components/Layouts/AdminLayout";
-import styles from "./AdminLeads.module.css"; // reuse existing styling
+import styles from "./AdminColdData.module.css";
 
 const AdminColdData = () => {
   const [coldData, setColdData] = useState([]);
@@ -42,14 +42,16 @@ const AdminColdData = () => {
 
   return (
     <AdminLayout>
-      <div className={styles.container}>
-        <h2 className={styles.title}>Cold Data Entries ({coldData.length})</h2>
-        {error && <p className={styles.error}>{error}</p>}
+      <div className={styles["cold-container"]}>
+        <h2 className={styles["cold-title"]}>
+          ❄️ Cold Data Entries ({coldData.length})
+        </h2>
+        {error && <p className={styles["cold-error"]}>{error}</p>}
         {loading ? (
-          <p>Loading...</p>
+          <p className={styles["cold-loading"]}>Loading...</p>
         ) : (
-          <div className={styles.tableWrapper}>
-            <table className={styles.dataTable}>
+          <div className={styles["cold-table-wrapper"]}>
+            <table className={styles["cold-data-table"]}>
               <thead>
                 <tr>
                   <th>Ser. No</th>
@@ -61,7 +63,9 @@ const AdminColdData = () => {
               <tbody>
                 {coldData.length === 0 ? (
                   <tr>
-                    <td colSpan="4">No data available.</td>
+                    <td colSpan="4" className={styles["cold-empty"]}>
+                      No data available.
+                    </td>
                   </tr>
                 ) : (
                   coldData.map((entry, index) => (
@@ -71,7 +75,7 @@ const AdminColdData = () => {
                       <td>{entry.property_listing}</td>
                       <td>
                         <button
-                          className={styles.deleteBtn}
+                          className={styles["cold-delete-btn"]}
                           onClick={() => handleDelete(entry.id)}
                           disabled={deletingId === entry.id}
                         >
@@ -91,3 +95,4 @@ const AdminColdData = () => {
 };
 
 export default AdminColdData;
+

@@ -1,0 +1,98 @@
+.cold-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cold-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.cold-error {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+  background-color: #fdecea;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.cold-loading {
+  font-size: 1.2rem;
+  color: #2980b9;
+}
+
+.cold-table-wrapper {
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cold-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.cold-data-table th,
+.cold-data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.cold-data-table th {
+  background-color: #f7f9fc;
+  color: #34495e;
+  font-weight: 600;
+}
+
+.cold-data-table tr:hover {
+  background-color: #f0f8ff;
+}
+
+.cold-delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cold-delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.cold-delete-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.cold-empty {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cold-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .cold-container {
+    padding: 1rem;
+  }
+
+  .cold-data-table th,
+  .cold-data-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
