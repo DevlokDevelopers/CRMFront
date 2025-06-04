@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Snowflake } from 'lucide-react';
 
 import styles from "./SideNav.module.css";
 import logo from "../../assets/LOGODEV.jpg";
@@ -97,7 +98,7 @@ const SideNav = () => {
           activePaths={["/single_admin_project","/data_for_project","/create_project"]} />
           <NavItem icon={<img src={upcomingIcon} alt="Upcoming" />} label="Upcoming Events" to="/adminUpcoming" />
           <NavItem icon={<img src={calenderIcon} alt="Calendar" />} label="Calendar" to="/admin_calender" />
-          <NavItem icon={<img src={calenderIcon} alt="Calendar" />} label="Cold Data" to="/colddata" />
+          <NavItem icon={<Snowflake size={20} color="#0ea5e9" />} label="Cold Data" to="/colddata" />
         </nav>
 
         <div className={styles.socialMedia}>
