@@ -98,7 +98,7 @@ const SideNav = () => {
           activePaths={["/single_admin_project","/data_for_project","/create_project"]} />
           <NavItem icon={<img src={upcomingIcon} alt="Upcoming" />} label="Upcoming Events" to="/adminUpcoming" />
           <NavItem icon={<img src={calenderIcon} alt="Calendar" />} label="Calendar" to="/admin_calender" />
-          <NavItem icon={<Snowflake size={20} color="#0ea5e9" />} label="Cold Data" to="/colddata" />
+          <NavItem icon={<Snowflake size={24} color="#6b7280" />} label="Cold Data" to="/colddata" />
         </nav>
 
         <div className={styles.socialMedia}>
