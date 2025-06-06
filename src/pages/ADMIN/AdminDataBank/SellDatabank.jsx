@@ -67,10 +67,7 @@ const AdminSellList = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const intervalId = setInterval(fetchData, 1000000);
-    return () => clearInterval(intervalId);
-  }, []);
+ 
 
   const handleTabChange = (tabName) => {
     navigate(tabPaths[tabName] || "/admin_buy_list");

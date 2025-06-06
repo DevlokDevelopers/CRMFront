@@ -67,10 +67,7 @@ const AdminForrentList = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const intervalId = setInterval(fetchData, 10000);
-    return () => clearInterval(intervalId);
-  }, []);
+  
 
   const handleTabChange = (tabName) => {
     navigate(tabPaths[tabName] || "/admin_buy_list");
