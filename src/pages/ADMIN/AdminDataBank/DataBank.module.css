@@ -3,6 +3,19 @@
     padding: 20px;
     background-color: #F4F9FD;
   }
+  .serialNumber {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
   
   /* Header Section */
   .headerContainer {
@@ -104,6 +117,7 @@
   
   /* Lead Card */
   .leadCard {
+    position: relative;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
