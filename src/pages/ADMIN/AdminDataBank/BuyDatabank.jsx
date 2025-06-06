@@ -7,6 +7,7 @@ import UploadImageModal from "../../../components/Modals/AddImageModal";
 import FilterModal from "../../../components/Modals/FilterModal";
 import filterIcon from "../../../assets/setting-4.svg";
 import FancySpinner from "../../../components/Loader/Loader";
+
 const AdminBuyList = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
@@ -18,7 +19,6 @@ const AdminBuyList = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [loading, setLoading] = useState(false);
-
 
   const tabPaths = {
     Analytics: "/admin_data_graph",
@@ -45,7 +45,7 @@ const AdminBuyList = () => {
       navigate("/login");
       return;
     }
-    setLoading(true); // Start spinner
+    setLoading(true);
     try {
       const response = await axios.get("https://crmbackend.up.railway.app/databank/databank_buy/", {
         headers: {
@@ -57,15 +57,13 @@ const AdminBuyList = () => {
       console.error("Error fetching data:", error);
       setError("Failed to fetch data. Try again later.");
     } finally {
-      setLoading(false); // Stop spinner
+      setLoading(false);
     }
   };
-  
+
   useEffect(() => {
     fetchData();
   }, []);
-
-  
 
   const handleTabChange = (tabName) => {
     navigate(tabPaths[tabName] || "/admin_buy_list");
@@ -124,46 +122,51 @@ const AdminBuyList = () => {
 
         {/* Content */}
         {loading ? (
-            <div className={styles.loaderWrapper}>
-              <FancySpinner />
-            </div>
-          ) : error ? (
-            <p className={styles.error}>{error}</p>
-          ) : data.length === 0 ? (
-            <p className={styles.noData}>No data available.</p>
-          ) : (
+          <div className={styles.loaderWrapper}>
+            <FancySpinner />
+          </div>
+        ) : error ? (
+          <p className={styles.error}>{error}</p>
+        ) : data.length === 0 ? (
+          <p className={styles.noData}>No data available.</p>
+        ) : (
           <div className={styles.leadContainer}>
-            {currentItems.map((item) => (
-              <div key={item.id} className={styles.leadCard}>
-                <div className={styles.leadInfo}>
-                  <div className={styles.infoBlock}>
-                    <p><strong>{item.name}</strong></p>
-                    <p><strong>{item.phonenumber}</strong></p>
-                    {item.is_in_project && (
+            {currentItems.map((item, index) => {
+              const serialNumber = indexOfFirstItem + index + 1;
+              return (
+                <div key={item.id} className={styles.leadCard}>
+                  <div className={styles.serialNumber}>
+                    <strong>{serialNumber}</strong>
+                  </div>
+                  <div className={styles.leadInfo}>
                     <div className={styles.infoBlock}>
-                      <p className={styles.inProjectTag}>
-                        Involved in Project: <strong>{item.project_name}</strong>
-                      </p>
+                      <p><strong>{item.name}</strong></p>
+                      <p><strong>{item.phonenumber}</strong></p>
+                      {item.is_in_project && (
+                        <div className={styles.infoBlock}>
+                          <p className={styles.inProjectTag}>
+                            Involved in Project: <strong>{item.project_name}</strong>
+                          </p>
+                        </div>
+                      )}
                     </div>
-                  )}
-                  </div>
-                  <div className={styles.infoBlock}>
-                    <p><strong>{item.district}, {item.place}</strong></p>
-                    <p><strong>{item.address}</strong></p>
-                  </div>
-                  <div className={styles.infoBlock}>
-                    <p><strong>Purpose: {item.purpose}</strong></p>
-                    <p><strong>Property Type: {item.mode_of_property}</strong></p>
-                    <p><strong>Lead Category: {item.lead_category}</strong></p>
-                  </div>
-                  
-                  <div className={styles.buttonContainer}>
-                    <button className={styles.detailsBtn} onClick={() => handleDetails(item.id)}>Details</button>
-                    <button className={styles.addimageBtn} onClick={() => handleMatchData(item.id)}>Check Match</button>
+                    <div className={styles.infoBlock}>
+                      <p><strong>{item.district}, {item.place}</strong></p>
+                      <p><strong>{item.address}</strong></p>
+                    </div>
+                    <div className={styles.infoBlock}>
+                      <p><strong>Purpose: {item.purpose}</strong></p>
+                      <p><strong>Property Type: {item.mode_of_property}</strong></p>
+                      <p><strong>Lead Category: {item.lead_category}</strong></p>
+                    </div>
+                    <div className={styles.buttonContainer}>
+                      <button className={styles.detailsBtn} onClick={() => handleDetails(item.id)}>Details</button>
+                      <button className={styles.addimageBtn} onClick={() => handleMatchData(item.id)}>Check Match</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
 
