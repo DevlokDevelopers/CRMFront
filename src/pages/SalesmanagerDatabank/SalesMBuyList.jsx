@@ -134,37 +134,46 @@ const BuyList = () => {
   <p className={styles.noData}>No data available.</p>
 ) : (
   <div className={styles.leadContainer}>
-    {currentItems.map((item) => (
-      <div key={item.id} className={styles.leadCard}>
-        <div className={styles.leadInfo}>
-          <div className={styles.infoBlock}>
-            <p><strong>{item.name}</strong></p>
-            <p><strong>{item.phonenumber}</strong></p>
-            {item.is_in_project && (
-              <div className={styles.infoBlock}>
-                <p className={styles.inProjectTag}>
-                  <strong>Involved in Project: {item.project_name}</strong>
-                </p>
-              </div>
-            )}
-          </div>
-          <div className={styles.infoBlock}>
-            <p><strong>{item.district}, {item.place}</strong></p>
-            <p><strong>{item.address}</strong></p>
-          </div>
-          <div className={styles.infoBlock}>
-            <p><strong>Purpose: {item.purpose}</strong></p>
-            <p><strong>Property Type: {item.mode_of_property}</strong></p>
-            <p><strong>Lead Category: {item.lead_category}</strong></p>
-          </div>
-          <div className={styles.buttonContainer}>
-            <button className={styles.detailsBtn} onClick={() => handleDetails(item.id)}>Details</button>
-            <button className={styles.addimageBtn} onClick={() => handleMatchData(item.id)}>Check Match</button>
-          </div>
-        </div>
-      </div>
-    ))}
-  </div>
+              {currentItems.map((item, index) => {
+                const serialNumber = indexOfFirstItem + index + 1;
+                return (
+                  <div key={item.id} className={styles.leadCard}>
+                  <div className={styles.serialAndInfo}>
+                    <div className={styles.serialNumber}>
+                      <strong>{serialNumber}</strong>
+                    </div>
+                    <div className={styles.leadInfo}>
+                      <div className={styles.infoBlock}>
+                        <p><strong>{item.name}</strong></p>
+                        <p><strong>{item.phonenumber}</strong></p>
+                        {item.is_in_project && (
+                          <div className={styles.infoBlock}>
+                            <p className={styles.inProjectTag}>
+                              Involved in Project: <strong>{item.project_name}</strong>
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                      <div className={styles.infoBlock}>
+                        <p><strong>{item.district}, {item.place}</strong></p>
+                        <p><strong>{item.address}</strong></p>
+                      </div>
+                      <div className={styles.infoBlock}>
+                        <p><strong>Purpose: {item.purpose}</strong></p>
+                        <p><strong>Property Type: {item.mode_of_property}</strong></p>
+                        <p><strong>Lead Category: {item.lead_category}</strong></p>
+                      </div>
+                      <div className={styles.buttonContainer}>
+                        <button className={styles.detailsBtn} onClick={() => handleDetails(item.id)}>Details</button>
+                        <button className={styles.addimageBtn} onClick={() => handleMatchData(item.id)}>Check Match</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                );
+              })}
+            </div>
 )}
 
 

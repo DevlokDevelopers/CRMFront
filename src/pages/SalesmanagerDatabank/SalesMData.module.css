@@ -3,6 +3,20 @@
   padding: 20px;
   background-color: #F4F9FD;
 }
+.serialAndInfo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.serialNumber {
+  width: 40px;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  color: #2c3e50;
+  font-weight: bold;
+  text-align: center;
+}
 
 /* Header Section */
 .headerContainer {
@@ -104,6 +118,7 @@
 
 /* Lead Card */
 .leadCard {
+  display: flex;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
