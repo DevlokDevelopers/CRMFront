@@ -29,6 +29,24 @@
   color: #3498db;
 }
 
+.cold-empty {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+/* === Desktop Only (Table) === */
+.desktopOnly {
+  display: block;
+}
+
+/* === Mobile Only (Cards) === */
+.mobileOnly {
+  display: none;
+}
+
+/* === Table Styles === */
 .cold-table-wrapper {
   overflow-x: auto;
   background: white;
@@ -36,7 +54,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* === Table Style === */
 .cold-data-table {
   width: 100%;
   border-collapse: collapse;
@@ -82,14 +99,53 @@
   cursor: not-allowed;
 }
 
-.cold-empty {
-  text-align: center;
-  padding: 2rem;
-  color: #7f8c8d;
-  font-size: 1rem;
+/* === Mobile Cards Grid === */
+.cold-card-grid {
+  display: none;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 0;
 }
 
-/* === Mobile: Responsive Card Layout === */
+.cold-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cold-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.cold-card-serial {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.cold-card-body p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #2d3436;
+}
+
+/* === Responsive: Mobile Only and Desktop Only Toggle === */
+@media (max-width: 768px) {
+  .desktopOnly {
+    display: none !important;
+  }
+  .mobileOnly {
+    display: grid !important;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Mobile Table: fallback for table inside desktopOnly if needed === */
 @media (max-width: 600px) {
   .cold-data-table {
     border: 0;
