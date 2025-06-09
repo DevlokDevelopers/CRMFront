@@ -48,12 +48,13 @@ const AdminColdData = () => {
         </h2>
 
         {error && <p className={styles["cold-error"]}>{error}</p>}
+
         {loading ? (
           <p className={styles["cold-loading"]}>Loading...</p>
         ) : (
           <>
             {/* Desktop Table */}
-            <div className={styles["cold-table-wrapper"]}>
+            <div className={`${styles["cold-table-wrapper"]} ${styles.desktopOnly}`}>
               {coldData.length === 0 ? (
                 <p className={styles["cold-empty"]}>No data available.</p>
               ) : (
@@ -99,7 +100,7 @@ const AdminColdData = () => {
             </div>
 
             {/* Mobile Cards */}
-            <div className={styles["cold-card-grid"]}>
+            <div className={`${styles["cold-card-grid"]} ${styles.mobileOnly}`}>
               {coldData.map((entry, index) => (
                 <div className={styles["cold-card"]} key={entry.id}>
                   <div className={styles["cold-card-header"]}>
@@ -113,8 +114,12 @@ const AdminColdData = () => {
                     </button>
                   </div>
                   <div className={styles["cold-card-body"]}>
-                    <p><strong>Name & Phone:</strong> {entry.name_phone}</p>
-                    <p><strong>Property Listing:</strong> {entry.property_listing}</p>
+                    <p>
+                      <strong>Name & Phone:</strong> {entry.name_phone}
+                    </p>
+                    <p>
+                      <strong>Property Listing:</strong> {entry.property_listing}
+                    </p>
                     <p>
                       <strong>Submitted At:</strong>{" "}
                       {entry.submitted_at
