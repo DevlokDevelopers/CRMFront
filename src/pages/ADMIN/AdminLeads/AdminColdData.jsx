@@ -71,10 +71,10 @@ const AdminColdData = () => {
                 ) : (
                   coldData.map((entry, index) => (
                     <tr key={entry.id}>
-                      <td>{index + 1}</td>
-                      <td>{entry.name_phone}</td>
-                      <td>{entry.property_listing}</td>
-                      <td>
+                      <td data-label="Ser. No">{index + 1}</td>
+                      <td data-label="Name & Phone">{entry.name_phone}</td>
+                      <td data-label="Property Listing">{entry.property_listing}</td>
+                      <td data-label="Submitted At">
                         {entry.submitted_at
                           ? new Date(entry.submitted_at).toLocaleString("en-IN", {
                               dateStyle: "medium",
@@ -83,7 +83,7 @@ const AdminColdData = () => {
                             })
                           : "NA"}
                       </td>
-                      <td>
+                      <td data-label="Action">
                         <button
                           className={styles["cold-delete-btn"]}
                           onClick={() => handleDelete(entry.id)}

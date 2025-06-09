@@ -107,20 +107,56 @@
   }
 }
 
-/* Mobile */
+/* Mobile - stacked card layout */
 @media (max-width: 480px) {
-  .cold-title {
-    font-size: 1.3rem;
+  .cold-table-wrapper {
+    overflow-x: visible;
   }
 
+  .cold-data-table,
+  .cold-data-table thead,
+  .cold-data-table tbody,
   .cold-data-table th,
+  .cold-data-table td,
+  .cold-data-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .cold-data-table thead {
+    display: none;
+  }
+
+  .cold-data-table tr {
+    margin-bottom: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+  }
+
   .cold-data-table td {
-    padding: 0.5rem;
-    font-size: 0.8rem;
+    text-align: left;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 50%;
+    font-size: 0.85rem;
+    border-bottom: none;
+  }
+
+  .cold-data-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    font-weight: bold;
+    color: #34495e;
+    white-space: nowrap;
   }
 
   .cold-delete-btn {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
   }
 }
