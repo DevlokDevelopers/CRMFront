@@ -1,24 +1,25 @@
-/* ========== Base Styling ========== */
+/* === Base Styles === */
 .cold-container {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cold-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #2c3e50;
+  margin-bottom: 2rem;
   text-align: center;
+  color: #2c3e50;
 }
 
 .cold-error {
   color: #e74c3c;
-  margin-bottom: 1rem;
   background-color: #fdecea;
-  padding: 0.5rem;
-  border-radius: 6px;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -28,45 +29,58 @@
   text-align: center;
 }
 
-.cold-table-wrapper {
-  overflow-x: auto;
-  background-color: #fff;
+.cold-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cold-card {
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: transform 0.2s ease;
 }
 
-.cold-data-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 700px;
-  table-layout: auto;
+.cold-card:hover {
+  transform: translateY(-3px);
 }
 
-.cold-data-table th,
-.cold-data-table td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid #e1e1e1;
+.cold-field {
+  display: flex;
+  flex-direction: column;
 }
 
-.cold-data-table th {
-  background-color: #f7f9fc;
-  color: #34495e;
+.cold-label {
   font-weight: 600;
+  font-size: 0.9rem;
+  color: #7f8c8d;
 }
 
-.cold-data-table tr:hover {
-  background-color: #f0f8ff;
+.cold-value {
+  font-size: 1rem;
+  color: #2d3436;
+  margin-top: 2px;
+  word-break: break-word;
+}
+
+.cold-action {
+  margin-top: auto;
+  text-align: right;
 }
 
 .cold-delete-btn {
   background-color: #e74c3c;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
 
@@ -82,78 +96,6 @@
 .cold-empty {
   text-align: center;
   padding: 2rem;
+  font-size: 1rem;
   color: #7f8c8d;
-}
-
-/* ========== Tablet ========== */
-@media (max-width: 768px) {
-  .cold-title {
-    font-size: 1.5rem;
-  }
-
-  .cold-container {
-    padding: 1rem;
-  }
-
-  .cold-data-table th,
-  .cold-data-table td {
-    padding: 0.75rem;
-    font-size: 0.9rem;
-    word-break: break-word;
-  }
-
-  .cold-delete-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* ========== Mobile ========== */
-@media (max-width: 480px) {
-  .cold-table-wrapper {
-    overflow-x: visible;
-  }
-
-  .cold-data-table {
-    border: 0;
-  }
-
-  .cold-data-table thead {
-    display: none;
-  }
-
-  .cold-data-table tr {
-    display: block;
-    margin-bottom: 1.5rem;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    padding: 1rem;
-  }
-
-  .cold-data-table td {
-    display: block;
-    text-align: left;
-    padding: 0.5rem 1rem;
-    position: relative;
-    padding-left: 50%;
-    font-size: 0.85rem;
-    border-bottom: none;
-  }
-
-  .cold-data-table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 1rem;
-    top: 0.5rem;
-    font-weight: bold;
-    color: #34495e;
-    white-space: nowrap;
-  }
-
-  .cold-delete-btn {
-    width: 100%;
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
-  }
 }
