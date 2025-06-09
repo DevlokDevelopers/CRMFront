@@ -107,7 +107,7 @@
   }
 }
 
-/* Mobile - stacked card layout */
+/* Mobile - Responsive stacked card layout */
 @media (max-width: 480px) {
   .cold-table-wrapper {
     overflow-x: visible;

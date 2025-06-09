@@ -79,7 +79,7 @@ const AdminColdData = () => {
                           ? new Date(entry.submitted_at).toLocaleString("en-IN", {
                               dateStyle: "medium",
                               timeStyle: "short",
-                              timeZone: "Asia/Kolkata"
+                              timeZone: "Asia/Kolkata",
                             })
                           : "NA"}
                       </td>
