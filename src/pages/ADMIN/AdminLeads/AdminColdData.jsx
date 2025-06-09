@@ -46,46 +46,90 @@ const AdminColdData = () => {
         <h2 className={styles["cold-title"]}>
           ❄️ Cold Data Entries ({coldData.length})
         </h2>
+
         {error && <p className={styles["cold-error"]}>{error}</p>}
         {loading ? (
           <p className={styles["cold-loading"]}>Loading...</p>
         ) : (
-          <div className={styles["cold-table-wrapper"]}>
-            {coldData.length === 0 ? (
-              <p className={styles["cold-empty"]}>No data available.</p>
-            ) : (
-              <div className={styles["cold-card-grid"]}>
-                {coldData.map((entry, index) => (
-                  <div className={styles["cold-card"]} key={entry.id}>
-                    <div className={styles["cold-card-header"]}>
-                      <span className={styles["cold-card-serial"]}>#{index + 1}</span>
-                      <button
-                        className={styles["cold-delete-btn"]}
-                        onClick={() => handleDelete(entry.id)}
-                        disabled={deletingId === entry.id}
-                      >
-                        {deletingId === entry.id ? "Deleting..." : "Delete"}
-                      </button>
-                    </div>
-                    <div className={styles["cold-card-body"]}>
-                      <p><strong>Name & Phone:</strong> {entry.name_phone}</p>
-                      <p><strong>Property Listing:</strong> {entry.property_listing}</p>
-                      <p>
-                        <strong>Submitted At:</strong>{" "}
-                        {entry.submitted_at
-                          ? new Date(entry.submitted_at).toLocaleString("en-IN", {
-                              dateStyle: "medium",
-                              timeStyle: "short",
-                              timeZone: "Asia/Kolkata",
-                            })
-                          : "NA"}
-                      </p>
-                    </div>
+          <>
+            {/* Desktop Table */}
+            <div className={styles["cold-table-wrapper"]}>
+              {coldData.length === 0 ? (
+                <p className={styles["cold-empty"]}>No data available.</p>
+              ) : (
+                <table className={styles["cold-data-table"]}>
+                  <thead>
+                    <tr>
+                      <th>Ser. No</th>
+                      <th>Name & Phone</th>
+                      <th>Property Listing</th>
+                      <th>Submitted At</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {coldData.map((entry, index) => (
+                      <tr key={entry.id}>
+                        <td>{index + 1}</td>
+                        <td>{entry.name_phone}</td>
+                        <td>{entry.property_listing}</td>
+                        <td>
+                          {entry.submitted_at
+                            ? new Date(entry.submitted_at).toLocaleString("en-IN", {
+                                dateStyle: "medium",
+                                timeStyle: "short",
+                                timeZone: "Asia/Kolkata",
+                              })
+                            : "NA"}
+                        </td>
+                        <td>
+                          <button
+                            className={styles["cold-delete-btn"]}
+                            onClick={() => handleDelete(entry.id)}
+                            disabled={deletingId === entry.id}
+                          >
+                            {deletingId === entry.id ? "Deleting..." : "Delete"}
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+
+            {/* Mobile Cards */}
+            <div className={styles["cold-card-grid"]}>
+              {coldData.map((entry, index) => (
+                <div className={styles["cold-card"]} key={entry.id}>
+                  <div className={styles["cold-card-header"]}>
+                    <span className={styles["cold-card-serial"]}>#{index + 1}</span>
+                    <button
+                      className={styles["cold-delete-btn"]}
+                      onClick={() => handleDelete(entry.id)}
+                      disabled={deletingId === entry.id}
+                    >
+                      {deletingId === entry.id ? "Deleting..." : "Delete"}
+                    </button>
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
+                  <div className={styles["cold-card-body"]}>
+                    <p><strong>Name & Phone:</strong> {entry.name_phone}</p>
+                    <p><strong>Property Listing:</strong> {entry.property_listing}</p>
+                    <p>
+                      <strong>Submitted At:</strong>{" "}
+                      {entry.submitted_at
+                        ? new Date(entry.submitted_at).toLocaleString("en-IN", {
+                            dateStyle: "medium",
+                            timeStyle: "short",
+                            timeZone: "Asia/Kolkata",
+                          })
+                        : "NA"}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </AdminLayout>
