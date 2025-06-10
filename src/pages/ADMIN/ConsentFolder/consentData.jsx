@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AdminLayout from "../../../components/Layouts/AdminLayout";
-import styles from "./consentData.module.css"; // updated to module import
 
 const ConsentList = () => {
   const [consents, setConsents] = useState([]);
