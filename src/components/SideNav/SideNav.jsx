@@ -9,6 +9,7 @@ import {
 import { SiGmail } from "react-icons/si";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Snowflake } from 'lucide-react';
+import { CheckCircle2 } from "lucide-react";
 
 import styles from "./SideNav.module.css";
 import logo from "../../assets/LOGODEV.jpg";
@@ -99,7 +100,7 @@ const SideNav = () => {
           <NavItem icon={<img src={upcomingIcon} alt="Upcoming" />} label="Upcoming Events" to="/adminUpcoming" />
           <NavItem icon={<img src={calenderIcon} alt="Calendar" />} label="Calendar" to="/admin_calender" />
           <NavItem icon={<Snowflake size={24} color="#6b7280" />} label="Cold Data" to="/colddata" />
-          <NavItem icon={<Snowflake size={24} color="#6b7280" />} label="Consent List" to="/consentlist" />
+          <NavItem icon={<CheckCircle2 size={24} color="#6b7280" />} label="Consent List" to="/consentlist" />
         </nav>
 
         <div className={styles.socialMedia}>
