@@ -151,6 +151,7 @@ const AdminDataForProject = () => {
                   <div className={styles.infoBlock}>
                     <p>Purpose: <strong>{item.purpose}</strong></p>
                     <p>Property Type: <strong>{item.mode_of_property}</strong></p>
+                    <p>Lead Category: <strong>{item.lead_category}</strong></p>
                   </div>
                   <div className={styles.buttonContainer}>
                     <button
