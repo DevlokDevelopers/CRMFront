@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AdminLayout from "../../../components/Layouts/AdminLayout";
-import styles from "./consentData.module.css"; // updated to module import
+import styles from "./consentData.module.css";
+import { ShieldCheck } from "lucide-react";
 
 const ConsentList = () => {
   const [consents, setConsents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const itemsPerPage = 10;
 
   useEffect(() => {
     const fetchConsents = async () => {
@@ -22,7 +23,6 @@ const ConsentList = () => {
         setLoading(false);
       }
     };
-
     fetchConsents();
   }, []);
 
@@ -34,27 +34,43 @@ const ConsentList = () => {
   return (
     <AdminLayout>
       <div className={styles.container}>
-        <h2 className={styles.title}>Consent Submissions ({consents.length})</h2>
+        <div className={styles.headerRow}>
+          <ShieldCheck size={20} color="#3b82f6" />
+          <h2 className={styles.title}>Consent Submissions ({consents.length})</h2>
+        </div>
 
         {loading ? (
-          <p>Loading...</p>
+          <p className={styles.loading}>Loading...</p>
         ) : error ? (
           <p className={styles.error}>{error}</p>
         ) : (
-          <>
-            <div className={styles.grid}>
-              {currentItems.map((item, index) => (
-                <div key={index} className={styles.card}>
-                  <p><strong>Name:</strong> {item.name}</p>
-                  <p><strong>Phone:</strong> {item.phone}</p>
-                  <p><strong>Address:</strong> {item.address}</p>
-                  <p><strong>IP Address:</strong> {item.ip_address}</p>
-                  <p><strong>User Agent:</strong></p>
-                  <pre className={styles.userAgent}>{item.user_agent}</pre>
-                  <p><strong>Submitted At:</strong> {item.submitted_at}</p>
-                </div>
-              ))}
-            </div>
+          <div className={styles.tableWrapper}>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>IP Address</th>
+                  <th>User Agent</th>
+                  <th>Submitted At</th>
+                </tr>
+              </thead>
+              <tbody>
+                {currentItems.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{item.phone}</td>
+                    <td>{item.address}</td>
+                    <td>{item.ip_address}</td>
+                    <td>
+                      <pre className={styles.userAgent}>{item.user_agent}</pre>
+                    </td>
+                    <td>{item.submitted_at}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
             {totalPages > 1 && (
               <div className={styles.pagination}>
@@ -69,7 +85,7 @@ const ConsentList = () => {
                 ))}
               </div>
             )}
-          </>
+          </div>
         )}
       </div>
     </AdminLayout>
