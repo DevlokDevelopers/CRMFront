@@ -66,7 +66,7 @@ const ConsentList = () => {
                     <td>
                       <pre className={styles.userAgent}>{item.user_agent}</pre>
                     </td>
-                    <td>{item.submitted_at}</td>
+                    <td>{new Date(item.submitted_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</td>
                   </tr>
                 ))}
               </tbody>
