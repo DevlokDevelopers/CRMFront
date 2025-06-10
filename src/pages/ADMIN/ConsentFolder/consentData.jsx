@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AdminLayout from "../../../components/Layouts/AdminLayout";
+import "./consentData.css"; // We'll define basic styling below
 
 const ConsentList = () => {
   const [consents, setConsents] = useState([]);
@@ -25,6 +26,7 @@ const ConsentList = () => {
     fetchConsents();
   }, []);
 
+  // Pagination logic
   const totalPages = Math.ceil(consents.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -32,35 +34,36 @@ const ConsentList = () => {
 
   return (
     <AdminLayout>
-      <div className={styles.container}>
-        <h2 className={styles.title}>Consent Submissions ({consents.length})</h2>
+      <div className="consent-container">
+        <h2 className="consent-title">Consent Submissions ({consents.length})</h2>
 
         {loading ? (
           <p>Loading...</p>
         ) : error ? (
-          <p className={styles.error}>{error}</p>
+          <p className="error-text">{error}</p>
         ) : (
           <>
-            <div className={styles.grid}>
+            <div className="consent-grid">
               {currentItems.map((item, index) => (
-                <div key={index} className={styles.consentcard}>
+                <div key={index} className="consent-card">
                   <p><strong>Name:</strong> {item.name}</p>
                   <p><strong>Phone:</strong> {item.phone}</p>
                   <p><strong>Address:</strong> {item.address}</p>
                   <p><strong>IP Address:</strong> {item.ip_address}</p>
                   <p><strong>User Agent:</strong></p>
-                  <pre className={styles.userAgent}>{item.user_agent}</pre>
+                  <pre className="user-agent">{item.user_agent}</pre>
                   <p><strong>Submitted At:</strong> {item.submitted_at}</p>
                 </div>
               ))}
             </div>
 
+            {/* Pagination */}
             {totalPages > 1 && (
-              <div className={styles.pagination}>
+              <div className="pagination-container">
                 {Array.from({ length: totalPages }, (_, index) => (
                   <button
                     key={index}
-                    className={`${styles.pageBtn} ${currentPage === index + 1 ? styles.activePage : ""}`}
+                    className={`pagination-btn ${currentPage === index + 1 ? "active" : ""}`}
                     onClick={() => setCurrentPage(index + 1)}
                   >
                     {index + 1}
@@ -74,5 +77,6 @@ const ConsentList = () => {
     </AdminLayout>
   );
 };
+
 
 export default ConsentList;
