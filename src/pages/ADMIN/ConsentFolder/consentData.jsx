@@ -44,7 +44,7 @@ const ConsentList = () => {
           <>
             <div className={styles.grid}>
               {currentItems.map((item, index) => (
-                <div key={index} className={styles.card}>
+                <div key={index} className={styles.consentcard}>
                   <p><strong>Name:</strong> {item.name}</p>
                   <p><strong>Phone:</strong> {item.phone}</p>
                   <p><strong>Address:</strong> {item.address}</p>

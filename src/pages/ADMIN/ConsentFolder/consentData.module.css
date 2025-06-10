@@ -35,7 +35,7 @@
 }
 
 /* Card */
-.card {
+.consentcard {
   background: var(--bg-card);
   border-radius: var(--border-radius);
   padding: 1rem;
@@ -43,15 +43,15 @@
   border-left: 4px solid var(--primary-color);
   display: flex;
   flex-direction: column;
-  font-size: 12.5px;
+  font-size: 12px;
 }
 
-.card p {
+.consentcard p {
   margin: 0.25rem 0;
   color: var(--text-dark);
 }
 
-.card strong {
+.consentcard strong {
   color: var(--primary-color);
 }
 
