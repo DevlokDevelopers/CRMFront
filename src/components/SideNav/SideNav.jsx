@@ -99,6 +99,7 @@ const SideNav = () => {
           <NavItem icon={<img src={upcomingIcon} alt="Upcoming" />} label="Upcoming Events" to="/adminUpcoming" />
           <NavItem icon={<img src={calenderIcon} alt="Calendar" />} label="Calendar" to="/admin_calender" />
           <NavItem icon={<Snowflake size={24} color="#6b7280" />} label="Cold Data" to="/colddata" />
+          <NavItem icon={<Snowflake size={24} color="#6b7280" />} label="Consent List" to="/consentlist" />
         </nav>
 
         <div className={styles.socialMedia}>
