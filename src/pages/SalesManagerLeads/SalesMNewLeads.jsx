@@ -265,6 +265,7 @@ const LeadsList = () => {
                                         
                                                         
                                                       )}</p>
+                      <p><strong>Lead Category: {lead.lead_category}</strong></p>
                     </div>
 
                    
