@@ -26,13 +26,11 @@ const SalesLeadCategoryGraph = () => {
   const accessToken = localStorage.getItem("access_token");
 
   const tabPaths = {
-    Analytics: "/salesmanager_lead_analytics",
-    New: "/salesmanager_newleads",
-    Followed: "/salesmanager_followed_leads",
-    Closed: "/salesmanager_closed_leads",
-    "Unsuccessfully": "/salesmanager_unsuccess_leads",
-    Pending: "/salesmanger_pending_leads",
-    Category :"/salesmanger_lead_category"
+    Analytics: "/salesmanger_lead_category",
+    "Marketing Data": "/marketing_data",
+    "Social Media": "/social_media",
+    "Main Data": "/main_data",
+    "General Data": "/general_data",
   };
 
   useEffect(() => {
