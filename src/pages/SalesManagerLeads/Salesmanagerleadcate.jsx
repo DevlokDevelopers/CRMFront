@@ -29,8 +29,8 @@ const SalesLeadCategoryGraph = () => {
     Analytics: "/salesmanger_lead_category",
     "Marketing Data": "/marketingData",
     "Social Media": "/socialMedia",
-    "Main Data": "/main_data",
-    "General Data": "/general_data",
+    "Main Data": "/mainData",
+    "General Data": "/generalData",
   };
 
   useEffect(() => {
