@@ -161,7 +161,7 @@ const StaffSideNav = () => {
             ]}
           />
           <NavItem icon={<Tags size={24} color="#6b7280" />} label="Category Data" to="/salesmanger_lead_category" 
-          activePaths={["/salesmanager_projects", "/salesmanager_project_details"]}/>
+          activePaths={["/marketingData", "/socialMedia","/mainData","/generalData"]}/>
           <NavItem
             icon={<img src={projectIcon} alt="Projects" />}
             label="Projects"
