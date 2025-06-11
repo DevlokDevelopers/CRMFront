@@ -28,7 +28,7 @@ const SalesLeadCategoryGraph = () => {
   const tabPaths = {
     Analytics: "/salesmanger_lead_category",
     "Marketing Data": "/marketingData",
-    "Social Media": "/social_media",
+    "Social Media": "/socialMedia",
     "Main Data": "/main_data",
     "General Data": "/general_data",
   };
