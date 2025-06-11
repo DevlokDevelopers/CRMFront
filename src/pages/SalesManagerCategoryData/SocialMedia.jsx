@@ -95,7 +95,7 @@ const SocialMediaDataList = () => {
 
         {/* Title and Filter Button */}
         <div className={styles.headerContainer}>
-          <h2 className={styles.title}>Marketing Data ({data.length})</h2>
+          <h2 className={styles.title}>Social Media ({data.length})</h2>
           <button className={styles.filterBtn} onClick={() => setFilterModalOpen(true)}>
             <img src={filterIcon} alt="Filter Icon" className={styles.icon} />
           </button>
