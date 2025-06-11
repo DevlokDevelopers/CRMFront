@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import styles from "../../SalesMData.module.css";
+import styles from "../SalesmanagerDatabank/SalesMData.module.css"
 import StaffLayout from "../../components/Layouts/SalesMLayout";
 import UploadImageModal from "../../components/Modals/AddImageModal";
 import FilterModal from "../../components/Modals/FilterModal";
