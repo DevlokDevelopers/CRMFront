@@ -70,6 +70,7 @@ import AdminDatabank from './pages/ADMIN/AdminDataBank/AdminDatabank'
 import SalesLeadCategoryGraph from './pages/SalesManagerLeads/Salesmanagerleadcate'
 import AdminColdData from './pages/ADMIN/AdminLeads/AdminColdData'
 import ConsentList from './pages/ADMIN/ConsentFolder/consentData'
+import MarketingDataList from './pages/SalesManagerCategoryData/Marketingdata'
 
 function App() {
 
@@ -144,6 +145,7 @@ function App() {
         <Route path='/salesmanger_lead_category' element={<SalesLeadCategoryGraph/>} />
         <Route path='/colddata' element={<AdminColdData/>} />
         <Route path='/consentlist' element={<ConsentList/>} />
+        <Route path='/marketingData' element={<MarketingDataList/>} />
 
 
 
