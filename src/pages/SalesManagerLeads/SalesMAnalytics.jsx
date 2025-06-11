@@ -31,7 +31,6 @@ const SalesmanagerAnalytics = () => {
     Closed: "/salesmanager_closed_leads",
     "Unsuccessfully": "/salesmanager_unsuccess_leads",
     Pending: "/salesmanger_pending_leads",
-    Category :"/salesmanger_lead_category"
   };
 
   useEffect(() => {

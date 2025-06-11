@@ -24,7 +24,6 @@ const FollowedLeads = () => {
     Closed: "/Salesmanager_closed_leads",
     "Unsuccessfully": "/Salesmanager_unsuccess_leads",
     Pending: "/salesmanger_pending_leads",
-    Category :"/salesmanger_lead_category"
   };
 
   useEffect(() => {
