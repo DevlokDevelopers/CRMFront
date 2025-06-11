@@ -12,6 +12,8 @@ import upcomingIcon from "../../assets/upcomingIcon.svg";
 import calenderIcon from "../../assets/calender.svg";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { Tags } from 'lucide-react';
+
 
 const StaffSideNav = () => {
   const location = useLocation(); // Use location to track the current route
@@ -158,6 +160,7 @@ const StaffSideNav = () => {
             
             ]}
           />
+          <NavItem icon={<Tags size={24} color="#6b7280" />} label="Category Data" to="/salesmanger_lead_category" />
           <NavItem
             icon={<img src={projectIcon} alt="Projects" />}
             label="Projects"
