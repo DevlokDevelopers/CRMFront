@@ -8,7 +8,7 @@ import FilterModal from "../../components/Modals/FilterModal";
 import filterIcon from "../../assets/setting-4.svg";
 import FancySpinner from "../../components/Loader/Loader";
 
-const MarketingDataList = () => {
+const SocialMediaDataList = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,7 +30,7 @@ const MarketingDataList = () => {
 
   const getActiveTab = () => {
     const currentPath = location.pathname;
-    return Object.keys(tabPaths).find((tab) => tabPaths[tab] === currentPath) || "Marketing Data";
+    return Object.keys(tabPaths).find((tab) => tabPaths[tab] === currentPath) || "Social Media";
   };
 
   const [activeTab, setActiveTab] = useState(getActiveTab());
@@ -49,7 +49,7 @@ const MarketingDataList = () => {
 
     try {
       setIsLoading(true);
-      const response = await axios.get("https://crmbackend.up.railway.app/databank/salesmanager_marketing_data/", {
+      const response = await axios.get("https://crmbackend.up.railway.app/databank/salesmanager_socailmedia_data/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -201,4 +201,4 @@ const MarketingDataList = () => {
   );
 };
 
-export default MarketingDataList;
+export default SocialMediaDataList;

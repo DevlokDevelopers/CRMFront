@@ -129,9 +129,9 @@ const DataEntryForm = () => {
                 required
               >
                 <option value="">Choose Lead Category</option>
-                <option value="Marketing data">Marketing data</option>
+                <option value="Marketing Data">Marketing Data</option>
                 <option value="Social Media">Social Media</option>
-                <option value="Main data">Main data</option>
+                <option value="Main Data">Main Data</option>
                 <option value="General Lead">General Lead</option>
               </select>
 

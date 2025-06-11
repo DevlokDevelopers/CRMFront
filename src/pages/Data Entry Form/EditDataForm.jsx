@@ -39,9 +39,9 @@ const DataEditForm = () => {
 
   const predefinedCategories = [
     "General Lead",
-    "Marketing data",
+    "Marketing Data",
     "Social Media",
-    "Main data"
+    "Main Data"
   ];
 
   useEffect(() => {
