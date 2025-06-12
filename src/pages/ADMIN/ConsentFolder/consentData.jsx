@@ -69,7 +69,12 @@ const ConsentList = () => {
                         <td>
                           <pre className={styles.userAgent}>{item.user_agent}</pre>
                         </td>
-                        <td>{new Date(item.submitted_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</td>
+                        <td>{new Date(item.submitted_at).toLocaleDateString("en-IN", {
+  day: "numeric",
+  month: "long",
+  year: "numeric"
+})}</td>
+
                       </tr>
                     ))}
                   </tbody>
@@ -87,7 +92,12 @@ const ConsentList = () => {
                   <p><strong>IP Address:</strong> {item.ip_address}</p>
                   <p><strong>User Agent:</strong></p>
                   <pre className={styles.userAgent}>{item.user_agent}</pre>
-                  <p><strong>Submitted At:</strong> {new Date(item.submitted_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</p>
+                  <p><strong>Submitted At:</strong> {new Date(item.submitted_at).toLocaleDateString("en-IN", {
+  day: "numeric",
+  month: "long",
+  year: "numeric"
+})}</p>
+
                 </div>
               ))}
             </div>
