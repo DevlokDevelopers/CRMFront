@@ -44,33 +44,53 @@ const ConsentList = () => {
         ) : error ? (
           <p className={styles.error}>{error}</p>
         ) : (
-          <div className={styles.tableWrapper}>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Phone</th>
-                  <th>Address</th>
-                  <th>IP Address</th>
-                  <th>User Agent</th>
-                  <th>Submitted At</th>
-                </tr>
-              </thead>
-              <tbody>
-                {currentItems.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.phone}</td>
-                    <td>{item.address}</td>
-                    <td>{item.ip_address}</td>
-                    <td>
-                      <pre className={styles.userAgent}>{item.user_agent}</pre>
-                    </td>
-                    <td>{new Date(item.submitted_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <>
+            {/* Table layout for desktop */}
+            <div className={styles.desktopTable}>
+              <div className={styles.tableWrapper}>
+                <table className={styles.table}>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Phone</th>
+                      <th>Address</th>
+                      <th>IP Address</th>
+                      <th>User Agent</th>
+                      <th>Submitted At</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentItems.map((item, index) => (
+                      <tr key={index}>
+                        <td>{item.name}</td>
+                        <td>{item.phone}</td>
+                        <td>{item.address}</td>
+                        <td>{item.ip_address}</td>
+                        <td>
+                          <pre className={styles.userAgent}>{item.user_agent}</pre>
+                        </td>
+                        <td>{new Date(item.submitted_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Card layout for mobile */}
+            <div className={styles.mobileCards}>
+              {currentItems.map((item, index) => (
+                <div key={index} className={styles.cardItem}>
+                  <p><strong>Name:</strong> {item.name}</p>
+                  <p><strong>Phone:</strong> {item.phone}</p>
+                  <p><strong>Address:</strong> {item.address}</p>
+                  <p><strong>IP Address:</strong> {item.ip_address}</p>
+                  <p><strong>User Agent:</strong></p>
+                  <pre className={styles.userAgent}>{item.user_agent}</pre>
+                  <p><strong>Submitted At:</strong> {new Date(item.submitted_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</p>
+                </div>
+              ))}
+            </div>
 
             {totalPages > 1 && (
               <div className={styles.pagination}>
@@ -85,7 +105,7 @@ const ConsentList = () => {
                 ))}
               </div>
             )}
-          </div>
+          </>
         )}
       </div>
     </AdminLayout>

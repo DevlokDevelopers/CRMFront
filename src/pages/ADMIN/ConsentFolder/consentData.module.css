@@ -11,7 +11,6 @@
   --font-size-xs: 10px;
 }
 
-/* Main Container */
 .container {
   padding: 1rem;
   margin: auto;
@@ -20,7 +19,6 @@
   font-size: var(--font-size-base);
 }
 
-/* Title */
 .title {
   font-size: 1rem;
   font-weight: 600;
@@ -29,7 +27,27 @@
   margin-bottom: 1rem;
 }
 
-/* Table Style Layout */
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  margin-top: 1rem;
+}
+
+/* Table layout */
 .tableWrapper {
   width: 100%;
   overflow-x: auto;
@@ -59,7 +77,7 @@
   color: var(--text-muted);
 }
 
-/* User Agent */
+/* User agent styling */
 .userAgent {
   font-family: 'Courier New', monospace;
   font-size: var(--font-size-xs);
@@ -69,14 +87,6 @@
   padding: 0.4rem;
   border-radius: 4px;
   color: var(--text-muted);
-}
-
-/* Error */
-.error {
-  color: red;
-  text-align: center;
-  font-size: var(--font-size-sm);
-  margin-top: 1rem;
 }
 
 /* Pagination */
@@ -108,16 +118,47 @@
   color: white;
 }
 
-/* Responsive Optimizations */
+/* Desktop table only */
+.desktopTable {
+  display: block;
+}
+
+/* Mobile cards */
+.mobileCards {
+  display: none;
+}
+
+/* Responsive mobile cards */
 @media (max-width: 768px) {
-  .title {
-    font-size: 0.95rem;
+  .tableWrapper,
+  .desktopTable {
+    display: none;
   }
 
-  .table th,
-  .table td {
-    padding: 0.5rem 0.6rem;
-    font-size: var(--font-size-xs);
+  .mobileCards {
+    display: block;
+  }
+
+  .cardItem {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: var(--font-size-sm);
+    color: var(--text-dark);
+  }
+
+  .cardItem p {
+    margin: 0.3rem 0;
+  }
+
+  .cardItem pre {
+    margin: 0.3rem 0;
+  }
+
+  .title {
+    font-size: 0.95rem;
   }
 
   .pagination {
