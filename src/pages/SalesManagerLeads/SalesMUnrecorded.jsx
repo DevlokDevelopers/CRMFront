@@ -47,7 +47,7 @@ const UnrecordedLeads = () => {
 
     try {
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/leads/get_unrecorded_leads/",
+        "http://93.127.185.178:8000/leads/get_unrecorded_leads/",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

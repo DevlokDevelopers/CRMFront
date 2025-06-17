@@ -60,7 +60,7 @@ const LeadsList = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/databank/get_new_data/",
+        "http://93.127.185.178:8000/databank/get_new_data/",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -149,7 +149,7 @@ const LeadsList = () => {
   
     try {
       await axios.post(
-        `https://crmbackend.up.railway.app/databank/Follow_lead_data/${leadId}/`,
+        `http://93.127.185.178:8000/databank/Follow_lead_data/${leadId}/`,
         {},
         {
           headers: {
@@ -169,7 +169,7 @@ const LeadsList = () => {
     const token = localStorage.getItem("access_token");
     setIsFollowingAll(true);
     try {
-      const res = await axios.post("https://crmbackend.up.railway.app/databank/follow_multiple_leads/", {
+      const res = await axios.post("http://93.127.185.178:8000/databank/follow_multiple_leads/", {
         lead_ids: leads.map(lead => lead.id),
       }, {
         headers: { Authorization: `Bearer ${token}` },

@@ -49,7 +49,7 @@ const SalesMSellList = () => {
     }
 
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/databank/salesmanager_sell_databank/", {
+      const response = await axios.get("http://93.127.185.178:8000/databank/salesmanager_sell_databank/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setData(response.data);

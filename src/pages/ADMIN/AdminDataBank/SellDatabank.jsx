@@ -49,7 +49,7 @@ const AdminSellList = () => {
   
     setLoading(true); // Show spinner
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/databank/sell_databank/", {
+      const response = await axios.get("http://93.127.185.178:8000/databank/sell_databank/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

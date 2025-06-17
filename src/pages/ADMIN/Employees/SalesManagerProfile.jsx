@@ -29,7 +29,7 @@ const AdminSalesManagerProfile = () => {
     }
 
     try {
-      const res = await axios.get(`https://crmbackend.up.railway.app/task/admin_salesmanager_workhistory/${id}/`, {
+      const res = await axios.get(`http://93.127.185.178:8000/task/admin_salesmanager_workhistory/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDetails(res.data);
@@ -48,7 +48,7 @@ const AdminSalesManagerProfile = () => {
     }
 
     try {
-      const res = await axios.get(`https://crmbackend.up.railway.app/project/salesmanager_project_admin/${id}/`, {
+      const res = await axios.get(`http://93.127.185.178:8000/project/salesmanager_project_admin/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(res.data);
@@ -79,7 +79,7 @@ const AdminSalesManagerProfile = () => {
     try {
       setUpdating(true);
   
-      await axios.put(`https://crmbackend.up.railway.app/auth/update_salesmanager/${id}/`, formData, {
+      await axios.put(`http://93.127.185.178:8000/auth/update_salesmanager/${id}/`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -94,7 +94,7 @@ const AdminSalesManagerProfile = () => {
         }
   
         await axios.patch(
-          `https://crmbackend.up.railway.app/auth/update_salesmanager_password/${id}/`,
+          `http://93.127.185.178:8000/auth/update_salesmanager_password/${id}/`,
           { password: newPassword },
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -117,7 +117,7 @@ const AdminSalesManagerProfile = () => {
   
     const token = localStorage.getItem("access_token");
     try {
-      await axios.delete(`https://crmbackend.up.railway.app/auth/delete_salesmanager/${id}/`, {
+      await axios.delete(`http://93.127.185.178:8000/auth/delete_salesmanager/${id}/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -172,7 +172,7 @@ const AdminSalesManagerProfile = () => {
 
         <div className={styles.profileCard}>
         <img
-            src={photo ? `https://crmbackend.up.railway.app${correctedPhoto}` : ProfileImage}
+            src={photo ? `http://93.127.185.178:8000${correctedPhoto}` : ProfileImage}
             alt={name}
             className={styles.profileImage}
             onError={(e) => { e.target.src = ProfileImage }}
@@ -244,7 +244,7 @@ const AdminSalesManagerProfile = () => {
                       src={
                         editData.photo
                           ? URL.createObjectURL(editData.photo)
-                          : (photo ? `https://crmbackend.up.railway.app${photo}` : ProfileImage)
+                          : (photo ? `http://93.127.185.178:8000${photo}` : ProfileImage)
                       }
                       alt="Preview"
                       className={styles.previewImage}

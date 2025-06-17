@@ -60,7 +60,7 @@ const AdminClosedLeads = () => {
     try {
       setLoading(true); // show spinner
       const res = await axios.get(
-        "https://crmbackend.up.railway.app/databank/get_successfullyclosed_leads/",
+        "http://93.127.185.178:8000/databank/get_successfullyclosed_leads/",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

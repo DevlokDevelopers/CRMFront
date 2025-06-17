@@ -24,7 +24,7 @@ const EditEventModal = ({ isOpen, onClose, eventData, onEventUpdated }) => {
     try {
       const accessToken = localStorage.getItem("access_token");
       await axios.put(
-        `https://crmbackend.up.railway.app/task/salesmanager_event_update/${eventData.id}/`,
+        `http://93.127.185.178:8000/task/salesmanager_event_update/${eventData.id}/`,
         {
           event_name: eventName,
           priority: eventPriority,

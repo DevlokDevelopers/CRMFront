@@ -60,7 +60,7 @@ const AdminDatabank = () => {
     setLoading(true); // Set loading state to true before making API call
     try {
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/databank/databank_list/",
+        "http://93.127.185.178:8000/databank/databank_list/",
         {
           headers: {
             Authorization: `Bearer ${token}`,

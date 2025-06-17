@@ -34,7 +34,7 @@ const AdminAddEventModal = ({ isOpen, onClose }) => {
   const createEventAPI = async (payload) => {
     try {
       const response = await axios.post(
-        "https://crmbackend.up.railway.app/task/create_event/",
+        "http://93.127.185.178:8000/task/create_event/",
         payload,
         {
           headers: {

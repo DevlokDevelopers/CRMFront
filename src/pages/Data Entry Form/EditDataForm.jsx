@@ -47,7 +47,7 @@ const DataEditForm = () => {
   useEffect(() => {
     if (!databankId) return console.error("❌ Databank ID is missing.");
 
-    axios.get(`https://crmbackend.up.railway.app/databank/detaildata/${databankId}/`, {
+    axios.get(`http://93.127.185.178:8000/databank/detaildata/${databankId}/`, {
       headers: { Authorization: `Bearer ${accessToken}` },
     })
     .then((response) => {
@@ -83,7 +83,7 @@ const DataEditForm = () => {
       });
 
       await axios.patch(
-        `https://crmbackend.up.railway.app/databank/editdata_Databank/${databankId}/`,
+        `http://93.127.185.178:8000/databank/editdata_Databank/${databankId}/`,
         formDataToSend,
         {
           headers: {

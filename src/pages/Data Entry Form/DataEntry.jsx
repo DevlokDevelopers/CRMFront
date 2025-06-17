@@ -59,7 +59,7 @@ const DataEntryForm = () => {
     );
 
     await axios.post(
-      `https://crmbackend.up.railway.app/databank/datacollection/`,
+      `http://93.127.185.178:8000/databank/datacollection/`,
       payload,
       { headers: { Authorization: `Bearer ${accessToken}` } }
     );

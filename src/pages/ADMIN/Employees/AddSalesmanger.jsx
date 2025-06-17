@@ -53,7 +53,7 @@ const AddSalesManager = () => {
   
     try {
       await axios.post(
-        'https://crmbackend.up.railway.app/auth/add_salesmanager/',
+        'http://93.127.185.178:8000/auth/add_salesmanager/',
         data,
         {
           headers: {

@@ -35,7 +35,7 @@ const AdminEmployeeListing = () => {
     setLoading(true); // start spinner
   
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/auth/list_employees/", {
+      const response = await axios.get("http://93.127.185.178:8000/auth/list_employees/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -88,7 +88,7 @@ const AdminEmployeeListing = () => {
       return;
     }
     try {
-      await axios.delete(`https://crmbackend.up.railway.app/auth/delete_glm/${glmId}/`, {
+      await axios.delete(`http://93.127.185.178:8000/auth/delete_glm/${glmId}/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -104,7 +104,7 @@ const AdminEmployeeListing = () => {
   const handleUpdateGLM = async () => {
     const token = localStorage.getItem("access_token");
     try {
-      await axios.put(`https://crmbackend.up.railway.app/auth/update_glm/${selectedEmployee.id}/`, editedData, {
+      await axios.put(`http://93.127.185.178:8000/auth/update_glm/${selectedEmployee.id}/`, editedData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -168,7 +168,7 @@ const AdminEmployeeListing = () => {
                 <div className={styles.leadInfo}>
                   <div className={styles.infoBlock}>
                     <img
-                      src={emp.photo ? `https://crmbackend.up.railway.app${emp.photo}` : ProfileImage}
+                      src={emp.photo ? `http://93.127.185.178:8000${emp.photo}` : ProfileImage}
                       alt={emp.username}
                       className={styles.profileImage}
                       onError={(e) => {

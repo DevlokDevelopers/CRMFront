@@ -27,7 +27,7 @@ const FollowUpModal = ({ leadId, onClose, onFollowUpCreated }) => {
 
     try {
       await axios.post(
-        `https://crmbackend.up.railway.app/followups/createfollowup/${leadId}/`,
+        `http://93.127.185.178:8000/followups/createfollowup/${leadId}/`,
         followUpData,
         {
           headers: {

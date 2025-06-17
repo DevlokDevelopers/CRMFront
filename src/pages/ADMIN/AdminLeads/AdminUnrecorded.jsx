@@ -63,7 +63,7 @@ const AdminUnrecordedLeads = () => {
     setLoading(true);
     setDataFetched(false);
     try {
-      const res = await axios.get("https://crmbackend.up.railway.app/leads/unrecorded_leads_admin/", {
+      const res = await axios.get("http://93.127.185.178:8000/leads/unrecorded_leads_admin/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLeads(res.data);
@@ -79,7 +79,7 @@ const AdminUnrecordedLeads = () => {
   const fetchSalesManagers = async () => {
     const token = localStorage.getItem("access_token");
     try {
-      const res = await axios.get("https://crmbackend.up.railway.app/auth/list_of_salesmangers/", {
+      const res = await axios.get("http://93.127.185.178:8000/auth/list_of_salesmangers/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSalesManagers(res.data);
@@ -111,7 +111,7 @@ const AdminUnrecordedLeads = () => {
     setLoading(true);
     try {
       await axios.patch(
-        `https://crmbackend.up.railway.app/leads/add_follower/${selectedLeadId}/`,
+        `http://93.127.185.178:8000/leads/add_follower/${selectedLeadId}/`,
         { sales_manager_id: parseInt(selectedSM) },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -146,7 +146,7 @@ const AdminUnrecordedLeads = () => {
 
     setDeletingLeadId(leadId);
     try {
-      await axios.delete(`https://crmbackend.up.railway.app/leads/delete_lead/${leadId}/`, {
+      await axios.delete(`http://93.127.185.178:8000/leads/delete_lead/${leadId}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchLeads();

@@ -66,7 +66,7 @@ const AdminDataSavedLeads = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        "https://crmbackend.up.railway.app/leads/get_datasaved_leads/",
+        "http://93.127.185.178:8000/leads/get_datasaved_leads/",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setLeads(res.data);
@@ -85,7 +85,7 @@ const AdminDataSavedLeads = () => {
     setLoading(true);
     try {
       const res = await axios.get(
-        "https://crmbackend.up.railway.app/auth/list_of_salesmangers/",
+        "http://93.127.185.178:8000/auth/list_of_salesmangers/",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setSalesManagers(res.data);
@@ -117,7 +117,7 @@ const AdminDataSavedLeads = () => {
     setLoading(true);
     try {
       await axios.patch(
-        `https://crmbackend.up.railway.app/leads/add_follower/${selectedLeadId}/`,
+        `http://93.127.185.178:8000/leads/add_follower/${selectedLeadId}/`,
         { sales_manager_id: parseInt(selectedSM) },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -150,7 +150,7 @@ const AdminDataSavedLeads = () => {
 
     axios
       .get(
-        `https://crmbackend.up.railway.app/databank/lead_into_db_admin/${lead.id}/`,
+        `http://93.127.185.178:8000/databank/lead_into_db_admin/${lead.id}/`,
         { headers: { Authorization: `Bearer ${accessToken}` } }
       )
       .then((response) => {

@@ -49,7 +49,7 @@ const GeneralDataList = () => {
 
     try {
       setIsLoading(true);
-      const response = await axios.get("https://crmbackend.up.railway.app/databank/salesmanager_general/", {
+      const response = await axios.get("http://93.127.185.178:8000/databank/salesmanager_general/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

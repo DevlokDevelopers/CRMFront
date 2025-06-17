@@ -24,7 +24,7 @@ const MatchingDatas = () => {
     }
 
     axios
-      .get(`https://crmbackend.up.railway.app/databank/match_property/${databankId}/`, {
+      .get(`http://93.127.185.178:8000/databank/match_property/${databankId}/`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {
@@ -44,7 +44,7 @@ const MatchingDatas = () => {
     setSending(true);
     try {
       const response = await axios.post(
-        `https://crmbackend.up.railway.app/databank/send_matching_pdf/${databankId}/`,
+        `http://93.127.185.178:8000/databank/send_matching_pdf/${databankId}/`,
         {},
         {
           headers: {

@@ -48,7 +48,7 @@ const AdminProjectDetails = () => {
 
     try {
       const response = await axios.get(
-        `https://crmbackend.up.railway.app/project/retrive_project/${id}/`,
+        `http://93.127.185.178:8000/project/retrive_project/${id}/`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -85,7 +85,7 @@ const AdminProjectDetails = () => {
   
     try {
       await axios.put(
-        `https://crmbackend.up.railway.app/project/edit_project/${id}/`,
+        `http://93.127.185.178:8000/project/edit_project/${id}/`,
         editForm,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -108,7 +108,7 @@ const AdminProjectDetails = () => {
     setLoadingViewDataId(lead.id);
   
     axios
-      .get(`https://crmbackend.up.railway.app/databank/lead_into_db_admin/${lead.lead}/`, {
+      .get(`http://93.127.185.178:8000/databank/lead_into_db_admin/${lead.lead}/`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -146,7 +146,7 @@ const AdminProjectDetails = () => {
   
     try {
       await axios.delete(
-        `https://crmbackend.up.railway.app/project/remove_data_banks/${id}/`,
+        `http://93.127.185.178:8000/project/remove_data_banks/${id}/`,
         {
           headers: { Authorization: `Bearer ${token}` },
           data: { data_bank_ids: [dataBankId] },
@@ -179,7 +179,7 @@ const AdminProjectDetails = () => {
     setRemovingProject(true);
   
     try {
-      await axios.delete(`https://crmbackend.up.railway.app/project/remove_project/${id}/`, {
+      await axios.delete(`http://93.127.185.178:8000/project/remove_project/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
   

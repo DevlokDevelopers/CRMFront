@@ -48,7 +48,7 @@ const DataSavedLeads = () => {
 
   try {
     const response = await axios.get(
-      "https://crmbackend.up.railway.app/leads/datasaved_leads/",
+      "http://93.127.185.178:8000/leads/datasaved_leads/",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -109,7 +109,7 @@ const DataSavedLeads = () => {
   const accessToken = localStorage.getItem("access_token");
 
   axios
-    .get(`https://crmbackend.up.railway.app/databank/lead_into_db_sales/${lead.id}/`, {
+    .get(`http://93.127.185.178:8000/databank/lead_into_db_sales/${lead.id}/`, {
       headers: { Authorization: `Bearer ${accessToken}` },
     })
     .then((response) => {

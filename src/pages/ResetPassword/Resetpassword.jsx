@@ -23,7 +23,7 @@ function ResetPassword() {
 
     try {
       const response = await fetch(
-        `https://crmbackend.up.railway.app/auth/logic/reset-password/${token}/`,
+        `http://93.127.185.178:8000/auth/logic/reset-password/${token}/`,
         {
           method: "POST",
           headers: {

@@ -36,7 +36,7 @@ const FollowUpList = () => {
     try {
       const accessToken = localStorage.getItem("access_token");
       const response = await axios.get(
-        `https://crmbackend.up.railway.app/followups/lead_wise_followup/${leadId}`,
+        `http://93.127.185.178:8000/followups/lead_wise_followup/${leadId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -72,7 +72,7 @@ const FollowUpList = () => {
 
       // Always update followup date and notes
       await axios.put(
-        `https://crmbackend.up.railway.app/followups/edit_followup/${id}/`,
+        `http://93.127.185.178:8000/followups/edit_followup/${id}/`,
         {
           followup_date: updatedData.followup_date,
           notes: updatedData.notes
@@ -87,7 +87,7 @@ const FollowUpList = () => {
       // Only update follow-up status if status is entered
       if (updatedData.status.trim()) {
         const method = updatedData.status ? "put" : "post";
-        const statusURL = `https://crmbackend.up.railway.app/followups/followup_status_entry/${id}/`;
+        const statusURL = `http://93.127.185.178:8000/followups/followup_status_entry/${id}/`;
         await axios[method](
           statusURL,
           {
@@ -120,7 +120,7 @@ const FollowUpList = () => {
     setDeletingId(id);
     try {
       const accessToken = localStorage.getItem("access_token");
-      await axios.delete(`https://crmbackend.up.railway.app/followups/cancel_followup/${id}/`, {
+      await axios.delete(`http://93.127.185.178:8000/followups/cancel_followup/${id}/`, {
         headers: { Authorization: `Bearer ${accessToken}` }
       });
       alert("Follow-up deleted!");

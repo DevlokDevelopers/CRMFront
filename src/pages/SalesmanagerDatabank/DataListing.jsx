@@ -29,7 +29,7 @@ const DataDisplay = () => {
     }
 
     axios
-      .get(`https://crmbackend.up.railway.app/databank/detaildata/${databankId}/`, {
+      .get(`http://93.127.185.178:8000/databank/detaildata/${databankId}/`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((res) => {
@@ -48,7 +48,7 @@ const DataDisplay = () => {
 
   const fetchImages = () => {
     axios
-      .get(`https://crmbackend.up.railway.app/databank/view_images/${databankId}/`, {
+      .get(`http://93.127.185.178:8000/databank/view_images/${databankId}/`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((res) => setImages(res.data))
@@ -58,7 +58,7 @@ const DataDisplay = () => {
   const handleDeleteImage = (imageId) => {
     if (window.confirm("Are you sure you want to delete this image?")) {
       axios
-        .delete(`https://crmbackend.up.railway.app/databank/delete_image/${databankId}/${imageId}/`, {
+        .delete(`http://93.127.185.178:8000/databank/delete_image/${databankId}/${imageId}/`, {
           headers: { Authorization: `Bearer ${accessToken}` },
         })
         .then(() => setImages((prev) => prev.filter((img) => img.id !== imageId)))
@@ -156,7 +156,7 @@ const DataDisplay = () => {
                 <div className={styles.imageGrid}>
                   {images.map((img) => (
                     <div key={img.id} className={styles.imageWrapper}>
-                      <img src={`https://crmbackend.up.railway.app${img.image}`} alt="Property" className={styles.image} />
+                      <img src={`http://93.127.185.178:8000${img.image}`} alt="Property" className={styles.image} />
                       <span className={styles.deleteIcon} onClick={() => handleDeleteImage(img.id)}>❌</span>
                     </div>
                   ))}

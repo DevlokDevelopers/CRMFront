@@ -29,7 +29,7 @@ const UpcomingEvents = () => {
   setLoading(true); // start loader
   try {
     const response = await axios.get(
-      "https://crmbackend.up.railway.app/followups/Upcomming_salesmanager_event/",
+      "http://93.127.185.178:8000/followups/Upcomming_salesmanager_event/",
       {
         headers: { Authorization: `Bearer ${accessToken}` },
       }
@@ -76,8 +76,8 @@ const UpcomingEvents = () => {
     const accessToken = localStorage.getItem("access_token");
     const url =
       item.type === "event"
-        ? `https://crmbackend.up.railway.app/task/salesmanager_event_delete/${item.id}/`
-        : `https://crmbackend.up.railway.app/followups/cancel_followup/${item.id}/`;
+        ? `http://93.127.185.178:8000/task/salesmanager_event_delete/${item.id}/`
+        : `http://93.127.185.178:8000/followups/cancel_followup/${item.id}/`;
 
     try {
       await axios.delete(url, {
@@ -117,8 +117,8 @@ const UpcomingEvents = () => {
 
     const url =
       editItem.type === "event"
-        ? `https://crmbackend.up.railway.app/task/salesmanager_event_update/${editItem.id}/`
-        : `https://crmbackend.up.railway.app/followups/edit_followup/${editItem.id}/`;
+        ? `http://93.127.185.178:8000/task/salesmanager_event_update/${editItem.id}/`
+        : `http://93.127.185.178:8000/followups/edit_followup/${editItem.id}/`;
 
     try {
       await axios.put(url, payload, {
@@ -141,8 +141,8 @@ const UpcomingEvents = () => {
     const isPending = !editItem.status;
     const url =
       editItem.type === "event"
-        ? `https://crmbackend.up.railway.app/task/sm_event_status_entry/${editItem.id}/`
-        : `https://crmbackend.up.railway.app/followups/followup_status_entry/${editItem.id}/`;
+        ? `http://93.127.185.178:8000/task/sm_event_status_entry/${editItem.id}/`
+        : `http://93.127.185.178:8000/followups/followup_status_entry/${editItem.id}/`;
 
     const method = isPending ? "post" : "put";
 

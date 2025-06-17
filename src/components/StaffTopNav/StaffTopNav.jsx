@@ -21,8 +21,8 @@ const StaffTopNav = () => {
   const seenMessagesRef = useRef(new Set());
 
   useEffect(() => {
-    const notificationSocket = new WebSocket("wss://crmbackend.up.railway.app/ws/notifications/");
-    const leadNotificationSocket = new WebSocket("wss://crmbackend.up.railway.app/ws/lead-notifications/");
+    const notificationSocket = new WebSocket("ws://93.127.185.178:8000/ws/notifications/");
+    const leadNotificationSocket = new WebSocket("ws://93.127.185.178:8000/ws/lead-notifications/");
 
     const addNotification = (message) => {
       const msgStr = typeof message === "string" ? message : JSON.stringify(message);
@@ -65,7 +65,7 @@ const StaffTopNav = () => {
       if (!token) return;
 
       axios
-        .get("https://crmbackend.up.railway.app/followups/followup-reminders/", {
+        .get("http://93.127.185.178:8000/followups/followup-reminders/", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
@@ -118,7 +118,7 @@ const StaffTopNav = () => {
 
   try {
     const response = await axios.get(
-      `https://crmbackend.up.railway.app/databank/search_by_salesmanager/?q=${encodeURIComponent(finalQuery)}`,
+      `http://93.127.185.178:8000/databank/search_by_salesmanager/?q=${encodeURIComponent(finalQuery)}`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
@@ -159,7 +159,7 @@ const StaffTopNav = () => {
     setIsSuggesting(true);
     try {
       const res = await axios.get(
-        `https://crmbackend.up.railway.app/databank/salesMSearchAutoComplete/?q=${encodeURIComponent(value)}`,
+        `http://93.127.185.178:8000/databank/salesMSearchAutoComplete/?q=${encodeURIComponent(value)}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setSuggestions(res.data.suggestions || []);

@@ -36,7 +36,7 @@ const StaffSideNav = () => {
         }
 
         const response = await axios.get(
-          "https://crmbackend.up.railway.app/databank/SM_monthly_performance/",
+          "http://93.127.185.178:8000/databank/SM_monthly_performance/",
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

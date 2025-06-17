@@ -15,7 +15,7 @@ function Forgotpassword() {
 
     try {
       const response = await axios.post(
-        'https://crmbackend.up.railway.app/auth/forgot-password/',
+        'http://93.127.185.178:8000/auth/forgot-password/',
         { email }
       )
 

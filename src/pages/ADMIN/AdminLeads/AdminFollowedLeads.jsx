@@ -62,7 +62,7 @@ const AdminFollowedLeads = () => {
     const token = localStorage.getItem("access_token");
     setLoadingLeads(true);  // Set loading state for leads
     try {
-      const res = await axios.get("https://crmbackend.up.railway.app/databank/admin_followed_leads/", {
+      const res = await axios.get("http://93.127.185.178:8000/databank/admin_followed_leads/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLeads(res.data);
@@ -77,7 +77,7 @@ const AdminFollowedLeads = () => {
     const token = localStorage.getItem("access_token");
     setLoadingSM(true);  // Set loading state for sales managers
     try {
-      const res = await axios.get("https://crmbackend.up.railway.app/auth/list_of_salesmangers/", {
+      const res = await axios.get("http://93.127.185.178:8000/auth/list_of_salesmangers/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSalesManagers(res.data);
@@ -122,7 +122,7 @@ const AdminFollowedLeads = () => {
     setLoadingLeads(true);  // Set loading state for lead assignment
     try {
       await axios.patch(
-        `https://crmbackend.up.railway.app/databank/add_follower_data/${selectedLeadId}/`,
+        `http://93.127.185.178:8000/databank/add_follower_data/${selectedLeadId}/`,
         { sales_manager_id: parseInt(selectedSM) },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -142,7 +142,7 @@ const AdminFollowedLeads = () => {
   const token = localStorage.getItem("access_token");
   setDeletingLeadId(leadId);
   try {
-    await axios.delete(`https://crmbackend.up.railway.app/databank/delete_lead/${leadId}/`, {
+    await axios.delete(`http://93.127.185.178:8000/databank/delete_lead/${leadId}/`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchLeads();  // Refresh list after deletion

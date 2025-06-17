@@ -20,7 +20,7 @@ const SalesMSearchResults = () => {
 
       try {
         const response = await axios.get(
-          `https://crmbackend.up.railway.app/databank/detaildata/${item.id}/`,
+          `http://93.127.185.178:8000/databank/detaildata/${item.id}/`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

@@ -44,7 +44,7 @@ const FollowedLeads = () => {
 
   try {
     const response = await axios.get(
-      "https://crmbackend.up.railway.app/databank/followedbysalesmanager/",
+      "http://93.127.185.178:8000/databank/followedbysalesmanager/",
       {
         headers: { Authorization: `Bearer ${token}` },
       }

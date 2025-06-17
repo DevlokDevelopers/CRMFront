@@ -40,7 +40,7 @@ const AdminUpcomingEvents = () => {
   
     setLoading(true); // start spinner
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/task/list_events/", {
+      const response = await axios.get("http://93.127.185.178:8000/task/list_events/", {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
   
@@ -87,7 +87,7 @@ const AdminUpcomingEvents = () => {
 
     try {
       const accessToken = localStorage.getItem("access_token");
-      await axios.delete(`https://crmbackend.up.railway.app/task/event_delete/${eventId}/`, {
+      await axios.delete(`http://93.127.185.178:8000/task/event_delete/${eventId}/`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
       alert("Event deleted successfully!");
@@ -151,7 +151,7 @@ const AdminUpcomingEvents = () => {
       };
 
       await axios.put(
-        `https://crmbackend.up.railway.app/task/event_update/${editEventData.id}/`,
+        `http://93.127.185.178:8000/task/event_update/${editEventData.id}/`,
         payload,
         {
           headers: {
@@ -187,7 +187,7 @@ const AdminUpcomingEvents = () => {
       const method = editEventData.event_status ? "put" : "post";
 
       await axios[method](
-        `https://crmbackend.up.railway.app/task/admin_event_status_entry/${editEventData.id}/`,
+        `http://93.127.185.178:8000/task/admin_event_status_entry/${editEventData.id}/`,
         statusPayload,
         {
           headers: {

@@ -46,7 +46,7 @@ const AdminCreateProject = () => {
 
     try {
       const response = await axios.post(
-        "https://crmbackend.up.railway.app/project/create_project/",
+        "http://93.127.185.178:8000/project/create_project/",
         form,
         {
           headers: {

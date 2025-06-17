@@ -34,7 +34,7 @@ const AdminDataForProject = () => {
 
     try {
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/databank/databank_project_list/",
+        "http://93.127.185.178:8000/databank/databank_project_list/",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ const AdminDataForProject = () => {
 
     try {
       await axios.post(
-        `https://crmbackend.up.railway.app/project/add_data_into_project/${projectId}/`,
+        `http://93.127.185.178:8000/project/add_data_into_project/${projectId}/`,
         { data_bank_ids: [databankId] },
         {
           headers: {

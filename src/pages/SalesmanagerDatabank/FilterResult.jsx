@@ -25,7 +25,7 @@ const FilteredResults = () => {
     }
 
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/databank/filter/", {
+      const response = await axios.get("http://93.127.185.178:8000/databank/filter/", {
         params: Object.fromEntries(queryParams.entries()),
         headers: {
           Authorization: `Bearer ${token}`,

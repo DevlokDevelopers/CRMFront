@@ -19,7 +19,7 @@ function Login() {
       console.log('Attempting login with:', { email, password }); // Log email and password
 
       const response = await axios.post(
-        'https://crmbackend.up.railway.app/auth/login/', // Your login endpoint
+        'http://93.127.185.178:8000/auth/login/', // Your login endpoint
         { email, password }
       );
 

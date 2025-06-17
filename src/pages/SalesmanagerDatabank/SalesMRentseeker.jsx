@@ -48,7 +48,7 @@ const SalesMRentSeekerList = () => {
     }
 
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/databank/salesmanager_rentseeker/", {
+      const response = await axios.get("http://93.127.185.178:8000/databank/salesmanager_rentseeker/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

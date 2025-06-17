@@ -33,7 +33,7 @@ const AdminProfile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("https://crmbackend.up.railway.app/auth/get_admin/", {
+        const res = await axios.get("http://93.127.185.178:8000/auth/get_admin/", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -90,7 +90,7 @@ const AdminProfile = () => {
     setLoading(true);
     try {
       const res = await axios.put(
-        "https://crmbackend.up.railway.app/auth/update-admin/",
+        "http://93.127.185.178:8000/auth/update-admin/",
         updatePayload,
         { headers: { Authorization: `Bearer ${token}` } }
       );

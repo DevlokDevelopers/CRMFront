@@ -59,7 +59,7 @@ const AdminUnsuccessLeads = () => {
     }
     try {
       setLoading(true); // show loader
-      const res = await axios.get("https://crmbackend.up.railway.app/databank/get_unsuccessfullyclosed_leads/", {
+      const res = await axios.get("http://93.127.185.178:8000/databank/get_unsuccessfullyclosed_leads/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLeads(res.data);

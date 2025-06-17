@@ -25,7 +25,7 @@ const UpdateStageModal = ({ isOpen, onClose, leadId, accessToken }) => {
     try {
       setIsLoading(true); // Start loading
       await axios.put(
-        `https://crmbackend.up.railway.app/databank/update_data_stage/${leadId}/`,
+        `http://93.127.185.178:8000/databank/update_data_stage/${leadId}/`,
         { stage: selectedStage },
         { headers: { Authorization: `Bearer ${accessToken}` } }
       );

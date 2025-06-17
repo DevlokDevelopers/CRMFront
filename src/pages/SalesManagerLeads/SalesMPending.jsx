@@ -44,7 +44,7 @@ const PendingLeads = () => {
 
     try {
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/databank/pending_data_salesmanager/",
+        "http://93.127.185.178:8000/databank/pending_data_salesmanager/",
         {
           headers: {
             Authorization: `Bearer ${token}`,

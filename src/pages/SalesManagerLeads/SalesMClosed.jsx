@@ -43,7 +43,7 @@ const ClosedLeads = () => {
 
     try {
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/databank/successfully_closed_leads_salesmanager/",
+        "http://93.127.185.178:8000/databank/successfully_closed_leads_salesmanager/",
         {
           headers: {
             Authorization: `Bearer ${token}`,

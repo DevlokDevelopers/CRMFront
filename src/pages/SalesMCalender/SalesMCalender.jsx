@@ -39,7 +39,7 @@ const SalesMCalendar = () => {
       }
 
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/followups/salesmanager_all_events/",
+        "http://93.127.185.178:8000/followups/salesmanager_all_events/",
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -111,7 +111,7 @@ const SalesMCalendar = () => {
     try {
       const accessToken = localStorage.getItem("access_token");
       await axios.delete(
-        `https://crmbackend.up.railway.app/task/salesmanager_event_delete/${eventId}/`,
+        `http://93.127.185.178:8000/task/salesmanager_event_delete/${eventId}/`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

@@ -27,7 +27,7 @@ const AdminProjects = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/project/list_projects/", {
+      const response = await axios.get("http://93.127.185.178:8000/project/list_projects/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(response.data.projects || []);

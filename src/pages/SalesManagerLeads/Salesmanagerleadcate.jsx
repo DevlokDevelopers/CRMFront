@@ -56,7 +56,7 @@ const SalesLeadCategoryGraph = () => {
   }, [selectedGraph]);
 
   const fetchLeadCategoryGraph = async () => {
-    const baseURL = "https://crmbackend.up.railway.app/databank";
+    const baseURL = "http://93.127.185.178:8000/databank";
     const endpoint =
       selectedGraph === "Monthly"
         ? "/sales_lead_category_current_month/"

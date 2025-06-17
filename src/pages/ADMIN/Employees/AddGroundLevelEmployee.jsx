@@ -51,7 +51,7 @@ const AddGroundEmployee = () => {
 
     try {
       await axios.post(
-        'https://crmbackend.up.railway.app/auth/add_glm/',
+        'http://93.127.185.178:8000/auth/add_glm/',
         data,
         {
           headers: {

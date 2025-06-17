@@ -41,7 +41,7 @@ const FollowUpCalendar = () => {
       }
 
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/followups/salesmanager_all_events/",
+        "http://93.127.185.178:8000/followups/salesmanager_all_events/",
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

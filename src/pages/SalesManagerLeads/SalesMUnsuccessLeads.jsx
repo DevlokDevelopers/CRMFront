@@ -45,7 +45,7 @@ const UnSuccessLeads = () => {
 
     try {
       const response = await axios.get(
-        "https://crmbackend.up.railway.app/databank/unsuccessfully_closed_data_salesmanager/",
+        "http://93.127.185.178:8000/databank/unsuccessfully_closed_data_salesmanager/",
         {
           headers: {
             Authorization: `Bearer ${token}`,

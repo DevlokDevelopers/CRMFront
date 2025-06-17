@@ -48,7 +48,7 @@ const AdminForrentList = () => {
     setLoading(true);
 
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/databank/forrent_databank/", {
+      const response = await axios.get("http://93.127.185.178:8000/databank/forrent_databank/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

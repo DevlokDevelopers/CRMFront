@@ -38,7 +38,7 @@ const UploadImageModal = ({ isOpen, onClose, databankId, onUploadSuccess }) => {
 
     try {
       const response = await axios.post(
-        `https://crmbackend.up.railway.app/databank/add_image_into_db/${databankId}/`,
+        `http://93.127.185.178:8000/databank/add_image_into_db/${databankId}/`,
         formData,
         {
           headers: {

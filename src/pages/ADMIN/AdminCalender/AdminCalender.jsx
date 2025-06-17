@@ -38,7 +38,7 @@ const AdminCalendar = () => {
         return;
       }
 
-      const response = await axios.get("https://crmbackend.up.railway.app/task/admin_sheduled_events/", {
+      const response = await axios.get("http://93.127.185.178:8000/task/admin_sheduled_events/", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -82,7 +82,7 @@ const AdminCalendar = () => {
 
     try {
       const accessToken = localStorage.getItem("access_token");
-      await axios.delete(`https://crmbackend.up.railway.app/task/event_delete/${eventId}/`, {
+      await axios.delete(`http://93.127.185.178:8000/task/event_delete/${eventId}/`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

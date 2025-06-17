@@ -60,7 +60,7 @@ const AdminAddLead = () => {
     );
 
     await axios.post(
-      `https://crmbackend.up.railway.app/databank/add_lead_by_admin/`,
+      `http://93.127.185.178:8000/databank/add_lead_by_admin/`,
       payload,
       { headers: { Authorization: `Bearer ${accessToken}` } }
     );
@@ -87,7 +87,7 @@ const AdminAddLead = () => {
 useEffect(() => {
   const fetchSalesManagers = async () => {
     try {
-      const response = await axios.get("https://crmbackend.up.railway.app/auth/list_of_salesmangers/", {
+      const response = await axios.get("http://93.127.185.178:8000/auth/list_of_salesmangers/", {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
       setSalesManagers(response.data);

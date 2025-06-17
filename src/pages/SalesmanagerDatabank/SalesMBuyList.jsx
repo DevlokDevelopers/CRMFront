@@ -49,7 +49,7 @@ const BuyList = () => {
 
   try {
     setIsLoading(true); // Start loading
-    const response = await axios.get("https://crmbackend.up.railway.app/databank/salesmanager_buy_data/", {
+    const response = await axios.get("http://93.127.185.178:8000/databank/salesmanager_buy_data/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

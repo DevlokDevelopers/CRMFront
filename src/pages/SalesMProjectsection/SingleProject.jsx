@@ -28,7 +28,7 @@ const SalesmanagerProjectDetails = () => {
 
       try {
         const response = await axios.get(
-          `https://crmbackend.up.railway.app/project/salesmanger_single_project/${id}/`,
+          `http://93.127.185.178:8000/project/salesmanger_single_project/${id}/`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

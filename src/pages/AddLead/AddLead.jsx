@@ -56,7 +56,7 @@ const AddLead = () => {
   try {
     setIsSaving(true); // Start loading
     await axios.post(
-      "https://crmbackend.up.railway.app/leads/enter_leads/",
+      "http://93.127.185.178:8000/leads/enter_leads/",
       payload,
       {
         headers: {

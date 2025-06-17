@@ -22,7 +22,7 @@ const AdminMatchingDatas = () => {
     }
 
     axios
-      .get(`https://crmbackend.up.railway.app/databank/match_property/${databankId}/`, {
+      .get(`http://93.127.185.178:8000/databank/match_property/${databankId}/`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {

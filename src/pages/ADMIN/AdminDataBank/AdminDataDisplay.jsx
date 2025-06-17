@@ -28,7 +28,7 @@ const AdminDataDisplay = () => {
     }
 
     axios
-      .get(`https://crmbackend.up.railway.app/databank/admin_single_databank/${databankId}/`, {
+      .get(`http://93.127.185.178:8000/databank/admin_single_databank/${databankId}/`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {
@@ -45,7 +45,7 @@ const AdminDataDisplay = () => {
 
   const fetchImages = () => {
     axios
-      .get(`https://crmbackend.up.railway.app/databank/admin_view_images/${databankId}/`, {
+      .get(`http://93.127.185.178:8000/databank/admin_view_images/${databankId}/`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => setImages(response.data))
@@ -57,7 +57,7 @@ const AdminDataDisplay = () => {
     setAddProjectError("");
 
     axios
-      .get("https://crmbackend.up.railway.app/project/list_projects/", {
+      .get("http://93.127.185.178:8000/project/list_projects/", {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((res) => {
@@ -73,7 +73,7 @@ const AdminDataDisplay = () => {
 
     axios
       .post(
-        `https://crmbackend.up.railway.app/project/add_data_into_project/${projectId}/`,
+        `http://93.127.185.178:8000/project/add_data_into_project/${projectId}/`,
         { data_bank_ids: [databankId] },
         {
           headers: { Authorization: `Bearer ${accessToken}` },

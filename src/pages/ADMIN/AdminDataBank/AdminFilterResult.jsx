@@ -26,7 +26,7 @@ const AdminFilteredResults = () => {
 
       try {
         const response = await axios.get(
-          "https://crmbackend.up.railway.app/databank/filter/",
+          "http://93.127.185.178:8000/databank/filter/",
           {
             params: Object.fromEntries(queryParams.entries()),
             headers: {

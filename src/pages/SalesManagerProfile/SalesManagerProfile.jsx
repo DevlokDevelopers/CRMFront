@@ -16,8 +16,8 @@ const SalesManagerProfile = () => {
         };
 
         const [profileRes, summaryRes] = await Promise.all([
-          axios.get("https://crmbackend.up.railway.app/auth/salesmanager_details/", { headers }),
-          axios.get("https://crmbackend.up.railway.app/task/salesmanager_personal_workhistory/", { headers }),
+          axios.get("http://93.127.185.178:8000/auth/salesmanager_details/", { headers }),
+          axios.get("http://93.127.185.178:8000/task/salesmanager_personal_workhistory/", { headers }),
         ]);
 
         setProfile(profileRes.data);
@@ -47,7 +47,7 @@ const SalesManagerProfile = () => {
       <div className={styles.profileCard}>
         <div className={styles.imageSection}>
         <img
-            src={profile.photo ? `https://crmbackend.up.railway.app${profile.photo}` : ProfileImage}
+            src={profile.photo ? `http://93.127.185.178:8000${profile.photo}` : ProfileImage}
             alt={profile.username}
             className={styles.profileImg}
             onError={(e) => {
